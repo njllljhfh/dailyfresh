@@ -1,5 +1,6 @@
 import re
 
+import itsdangerous
 from django import db
 from django.conf import settings
 from django.core.mail import send_mail
@@ -97,11 +98,47 @@ class RegisterView(View):
         return HttpResponse('okpost注册逻辑')
 
 
+# ----------------------------------------------------------
+
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+from django.conf import settings
+
+
 class ActiveView(View):
 
     def get(self, request, token):
-        return HttpResponse('ok')
+        # 解析token,获取用户id信息
+        # 参1: 混淆用的盐值 参2: 过期时间
+        serializer = Serializer(settings.SECRET_KEY, 3600)
+        try:
+            # 解析token获取id信息,
+            result = serializer.loads(token)  # 结果是: {"confirm": self.id} (users/models中的字典)
+        # 激活令牌(token)过期,会捕获这个异常
+        except itsdangerous.SignatureExpired:
+            return HttpResponse('激活邮件已过期')
 
+        # 在字典中提取 用户的id
+        userid = result.get('confirm')
+
+        # 根据用户id 获取用户
+        try:
+            user = User.objects.get(id=userid)
+        # 模型中都封装有 DoesNotExist 这个异常(可用  模型类名.DoesNotExist  来捕获该异常)
+        # 当 get 获取到的数据为 0 时,会捕获到这个异常(即说明该用户不存在)
+        except User.DoesNotExist:
+            return HttpResponse('该用户不存在')
+
+        # 如果用户已经注册
+        if user.is_active:
+            return HttpResponse('该用户已经激活')
+
+        # 注册用户
+        user.is_active = True
+        user.save()  # update
+
+        return HttpResponse('激活成功,去登录界面')
+
+# ----------------------------------------------------------
 # # 发送邮件的 方法(这个不是视图)
 # def send_mail_method(recipient_list, user_name, token):
 #     # 参1:邮件标题
