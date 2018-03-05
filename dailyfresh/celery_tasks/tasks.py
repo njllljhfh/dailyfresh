@@ -1,12 +1,12 @@
+# ------------------------------这写配置在worker中要使用,在此处(即非worker服务器)可以删除了
 import os
-
 # 添加环境变量(把一个东西添加到环境变量中, 那么在任何文件夹下都能执行
 os.environ["DJANGO_SETTINGS_MODULE"] = "dailyfresh.settings"
 
 # 放到Celery服务器上时 添加的代码(即woker)
 import django
-
 django.setup()  # 会把指定的路径下的  settings  的配置全部加载下来(这样在worker上就可以执行borker中的任务了.
+# -------------------------------
 
 from celery import Celery
 from django.conf import settings
