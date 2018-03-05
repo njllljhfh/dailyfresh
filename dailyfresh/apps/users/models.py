@@ -2,7 +2,8 @@ from django.db import models
 from django.contrib.auth.models import AbstractUser
 
 # from apps.goods.models import GoodsSKU
-# from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
+# from goods.models import GoodsSKU
+from itsdangerous import TimedJSONWebSignatureSerializer as Serializer
 from django.conf import settings
 
 # Create your models here.
@@ -11,14 +12,18 @@ from utils.models import BaseModel
 
 class User(AbstractUser, BaseModel):
     """用户"""
+
     class Meta:
         db_table = "df_users"
 
-    # def generate_active_token(self):
-    #     """生成激活令牌"""
-    #     serializer = Serializer(settings.SECRET_KEY, 3600)
-    #     token = serializer.dumps({"confirm": self.id})  # 返回bytes类型
-    #     return token.decode()
+    def generate_active_token(self):
+        """生成激活令牌"""
+        # 参1:SECRET_KEY 盐值,  参2:3600 秒,过期时间
+        serializer = Serializer(settings.SECRET_KEY, 3600)
+        # {"confirm": self.id} 这是json数据
+        # dumps 通过算法 把用户id转码,生成token
+        token = serializer.dumps({"confirm": self.id})  # 返回bytes类型
+        return token.decode()  # token 是 b'aasdfwefasdfasdfas' 这种形式,所以要用 decode 解码
 
 
 class Address(BaseModel):
@@ -31,6 +36,3 @@ class Address(BaseModel):
 
     class Meta:
         db_table = "df_address"
-
-
-
