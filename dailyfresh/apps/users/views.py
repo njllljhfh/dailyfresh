@@ -6,10 +6,13 @@ from django.core.mail import send_mail
 from django.core.urlresolvers import reverse
 from django.http import HttpResponse
 from django.shortcuts import render, redirect
+from django.views.generic import View
+from celery_tasks.tasks import send_mail_method
+from users.models import User
+
 
 # Create your views here.
 # 注册视图
-from django.views.generic import View
 
 # def register(request):
 #     """返回注册页面
@@ -30,7 +33,6 @@ from django.views.generic import View
 # django提供了各种功能的类视图可以继承 ListView DetailView FormView
 # 如果django提供的 类视图不能满足需求,就自己定义 类视图(继承与View)
 # 每种请求 分开,结构清晰
-from users.models import User
 
 
 class RegisterView(View):
@@ -86,7 +88,10 @@ class RegisterView(View):
         # 接收邮件的人  可以有多个
         # recipient_list = [user.email]  应该写成个
         recipient_list = ['dragonax@163.com']  # 这里是为了测试方便,就把邮箱写成固定的了
-        send_mail_method(recipient_list, user.username, token)
+
+        # 通过delay调用 ,通知worker执行任务(tasks.py中的方法中的 代码可以不用写,保留方法就可以,worker中有对应的方法来执行代码)
+        # 执行后有返回值(一串数字,例如:632111f - 0240 - 4c35 - bd9c - 060ca376db04),可保存在backend中(该数字在redis中保存为key)
+        send_mail_method.delay(recipient_list, user.username, token)
 
         # 给浏览器响应
         return HttpResponse('okpost注册逻辑')
@@ -97,16 +102,15 @@ class ActiveView(View):
     def get(self, request, token):
         return HttpResponse('ok')
 
-
-# 发送邮件的 方法(这个不是视图)
-def send_mail_method(recipient_list, user_name, token):
-    # 参1:邮件标题
-    # 参2:邮件中的文本内容(message只能传入纯文本内容)
-    # 参3:邮件发送方
-    # 参4:邮件接收方(recipient_list,可以是多个人接收)
-    # html_message, 可传能被浏览器渲染的标签的文本信息
-    # send_mail(subject, message, from_email, recipient_list)
-    html_body = '<h1>尊敬的用户 %s, 感谢您注册天天生鲜！</h1>' \
-                '<br/><p>请点击此链接激活您的帐号<a href="http://127.0.0.1:8000/users/active/%s">' \
-                'http://127.0.0.1:8000/users/active/%s</a></p>' % (user_name, token, token)
-    send_mail('天天生鲜激活', '', settings.EMAIL_FROM, recipient_list, html_message=html_body)
+# # 发送邮件的 方法(这个不是视图)
+# def send_mail_method(recipient_list, user_name, token):
+#     # 参1:邮件标题
+#     # 参2:邮件中的文本内容(message只能传入纯文本内容)
+#     # 参3:邮件发送方
+#     # 参4:邮件接收方(recipient_list,可以是多个人接收)
+#     # html_message, 可传能被浏览器渲染的标签的文本信息
+#     # send_mail(subject, message, from_email, recipient_list)
+#     html_body = '<h1>尊敬的用户 %s, 感谢您注册天天生鲜！</h1>' \
+#                 '<br/><p>请点击此链接激活您的帐号<a href="http://127.0.0.1:8000/users/active/%s">' \
+#                 'http://127.0.0.1:8000/users/active/%s</a></p>' % (user_name, token, token)
+#     send_mail('天天生鲜激活', '', settings.EMAIL_FROM, recipient_list, html_message=html_body)
