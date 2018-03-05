@@ -47,4 +47,3 @@ class OrderGoods(BaseModel):
     class Meta:
         db_table = "df_order_goods"
 
-

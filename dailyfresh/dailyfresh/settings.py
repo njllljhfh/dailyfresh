@@ -62,7 +62,7 @@ ROOT_URLCONF = 'dailyfresh.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,6 +103,7 @@ DATABASES = {
 DATABASES_ROUTERS = ['utils.db_routers.MasterSlaveDBRouter']
 
 # 固定的语法格式 (应用名.用户模型类名)
+# 指定用来认证模型的应用 的路径
 AUTH_USER_MODEL = 'users.User'
 
 # Internationalization
@@ -122,3 +123,6 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# 配置静态文件加载路径
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
