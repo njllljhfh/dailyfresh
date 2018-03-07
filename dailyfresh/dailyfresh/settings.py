@@ -134,3 +134,24 @@ EMAIL_PORT = 25  # 发邮件端口
 EMAIL_HOST_USER = 'dragonax@163.com'  # 授权邮箱
 EMAIL_HOST_PASSWORD = 'python6'  # 邮箱授权时获得的密码,非注册登录的密码
 EMAIL_FROM = 'dragonax@163.com'  # 发件人抬头,就是发邮件用的地址
+
+# 缓存
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://192.168.21.134:6379/5",
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
+
+# Session
+# 下面是 django-redis 的文档
+# http://django-redis-chs.readthedocs.io/zh_CN/latest/#session-backend
+# 指定 session 存在 redis 里
+SESSION_ENGINE = "django.contrib.sessions.backends.cache"
+SESSION_CACHE_ALIAS = "default"
+
+# 如果用户没有登录 会去跳转到登录界面(从收货地址界面,跳转到登录界面)
+LOGIN_URL = '/users/login'
