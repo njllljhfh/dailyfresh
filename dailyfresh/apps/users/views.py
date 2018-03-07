@@ -174,7 +174,7 @@ class LoginView(View):
 
         # 2.校验 用户输入的登录数据 是否为空
         if not all([username, psw]):
-            # 如果为空,则返回登录界面重新登录
+            # 如果有任意一个为空,则返回登录界面重新登录
             return redirect(reverse('users:login'))
 
         # 3.数据库获取用户
@@ -237,7 +237,7 @@ class LogoutView(View):
         结论：从request中可以获取到user信息，request.user"""
         logout(request)
 
-        return HttpResponse('ok')
+        return redirect(reverse('users:login'))
 
 
 # 收货地址视图
@@ -308,3 +308,24 @@ class AddressView(LoginRequiredMixin, View):
             print(3333333333333333333)
 
         return redirect(reverse("users:address"))
+
+
+# 用户信息页面
+class UserInfoView(LoginRequiredMixin, View):
+
+    def get(self, request):
+
+        # latest django的方法, 排序获取最近添加的地址,只会返回一个值
+        try:
+            # address 是一个地址模型类的实例对象
+            address = request.user.address_set.latest('create_time')
+        except Address.DoesNotExist:
+            address = None
+
+        # 获取浏览记录
+        # 存在redis中, string,列表,集合,有序集合,hash
+        # 选择用列表存,结构是: 'history': [sku1.id, sku2.id, sku3.id, sku4.id,]
+
+        context = {'address': address}
+
+        return render(request, 'user_center_info.html', context)
