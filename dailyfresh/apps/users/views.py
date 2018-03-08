@@ -12,6 +12,7 @@ from django.shortcuts import render, redirect
 from django.utils.decorators import classonlymethod
 from django.views.generic import View
 from celery_tasks.tasks import send_mail_method
+from goods.models import GoodsSKU
 from users.models import User, Address
 
 from utils.views import LoginRequiredMixin
@@ -181,6 +182,7 @@ class LoginView(View):
         # User.objects.filter(username=username, password=psw)
         # django提供的验证方法 authenticate,成功返回User对象, 不成功返回 None
         user = authenticate(username=username, password=psw)
+
         if user is None:
             return render(request, 'login.html', {'errmsg': '用户名或密码错误'})
 
@@ -310,10 +312,15 @@ class AddressView(LoginRequiredMixin, View):
         return redirect(reverse("users:address"))
 
 
+from django_redis import get_redis_connection
+
+
 # 用户信息页面
 class UserInfoView(LoginRequiredMixin, View):
 
     def get(self, request):
+        # 获取用户
+        user = request.user
 
         # latest django的方法, 排序获取最近添加的地址,只会返回一个值
         try:
@@ -324,8 +331,28 @@ class UserInfoView(LoginRequiredMixin, View):
 
         # 获取浏览记录
         # 存在redis中, string,列表,集合,有序集合,hash
-        # 选择用列表存,结构是: 'history': [sku1.id, sku2.id, sku3.id, sku4.id,]
+        # 选择用列表存,结构是: 'history_userid': [sku1.id, sku2.id, sku3.id, sku4.id,]
 
-        context = {'address': address}
+        # 使用django-redis的原生客户端,连接redis缓存,建立redis连接的实例对象redis_conn
+        redis_conn = get_redis_connection('default')
+
+        # 获取reids列表中的数据  lrange  0  4, 获取的是某个用户的 前五个浏览记录商品的id(sku_id)
+        sku_ids = redis_conn.lrange('history_%s' % user.id, 0, 4)
+
+        # 去数据库查询具体数据
+        # select * from df_goods_sku where id in
+        # skus = GoodsSKU.objects.filter(id__in=sku_ids)
+        # 上面这样 查询得到的数据的顺序 跟 sku_ids 中的顺序不同(如 redis中是:5,2,6,3,4   mysql 中是:2,3,4,5,6
+
+        skus = []  # 存放商品对象的列表
+        for sku_id in sku_ids:
+            # 查询redis中获取的前五个商品的列表中的 每一个 sku
+            sku = GoodsSKU.objects.get(id=sku_id)
+            # 将查询到的 商品对象 添加到 skus 中
+            skus.append(sku)
+
+        context = {'address': address,
+                   'skus': skus
+                   }
 
         return render(request, 'user_center_info.html', context)

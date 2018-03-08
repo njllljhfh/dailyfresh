@@ -19,4 +19,5 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^users/', include('users.urls', namespace='users')),
+    url(r'^tinymce/', include('tinymce.urls')),  # 富文本编辑器
 ]

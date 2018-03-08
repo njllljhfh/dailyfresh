@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'tinymce',  # 富文本编辑器应用要注册
     'cart',
     'goods',
     'orders',
@@ -135,7 +136,7 @@ EMAIL_HOST_USER = 'dragonax@163.com'  # 授权邮箱
 EMAIL_HOST_PASSWORD = 'python6'  # 邮箱授权时获得的密码,非注册登录的密码
 EMAIL_FROM = 'dragonax@163.com'  # 发件人抬头,就是发邮件用的地址
 
-# 缓存
+# 缓存(redis)
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
@@ -155,3 +156,18 @@ SESSION_CACHE_ALIAS = "default"
 
 # 如果用户没有登录 会去跳转到登录界面(从收货地址界面,跳转到登录界面)
 LOGIN_URL = '/users/login'
+
+# 配置Django自定义的存储系统
+# DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
+DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
+
+# fastDFS的自定义配置
+FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')  # 配置文件路径
+SERVER_IP = 'http://192.168.21.134:8888'  # nginx服务器ip地址
+
+# 富文本编辑器的配置
+TINYMCE_DEFAULT_CONFIG = {
+    'theme': 'advanced',  # 丰富样式
+    'width': 600,
+    'height': 400,
+}
