@@ -36,13 +36,13 @@ from utils.views import LoginRequiredMixin
 #         return HttpResponse('okpost')
 
 
-# 注册的类视图
-# django提供了各种功能的类视图可以继承 ListView DetailView FormView
-# 如果django提供的 类视图不能满足需求,就自己定义 类视图(继承与View)
-# 每种请求 分开,结构清晰
-
-
 class RegisterView(View):
+    """
+    注册的类视图
+    django提供了各种功能的类视图可以继承 ListView DetailView FormView
+    如果django提供的 类视图不能满足需求,就自己定义 类视图(继承与View)
+    每种请求 分开,结构清晰
+    """
 
     def get(self, request):
         """get 的名字是固定的"""
@@ -111,6 +111,7 @@ from django.conf import settings
 
 
 class ActiveView(View):
+    """激活用户"""
 
     def get(self, request, token):
         # 解析token,获取用户id信息
@@ -162,8 +163,9 @@ class ActiveView(View):
 #     send_mail('天天生鲜激活', '', settings.EMAIL_FROM, recipient_list, html_message=html_body)
 
 
-# 登录的类视图
 class LoginView(View):
+    """登录类视图"""
+
     # 进入登录页面
     def get(self, request):
         return render(request, 'login.html')
@@ -228,8 +230,9 @@ class LoginView(View):
             return redirect(next)
 
 
-# 退出的类视图
 class LogoutView(View):
+    """退出的类视图"""
+
     def get(self, request):
         # 清除登录信息
         """
@@ -242,9 +245,12 @@ class LogoutView(View):
         return redirect(reverse('users:login'))
 
 
-# 收货地址视图
-# 多继承,两个父类中有 同名的方法,谁在前面,执行谁的
 class AddressView(LoginRequiredMixin, View):
+    """
+    收货地址视图
+    多继承,两个父类中有 同名的方法,谁在前面,执行谁的
+    """
+
     def get(self, request):
         # 用户是否登录
         # request 有一个 user对象
@@ -315,8 +321,8 @@ class AddressView(LoginRequiredMixin, View):
 from django_redis import get_redis_connection
 
 
-# 用户信息页面
 class UserInfoView(LoginRequiredMixin, View):
+    """用户信息页面"""
 
     def get(self, request):
         # 获取用户

@@ -65,7 +65,7 @@ class FastDFSStorage(Storage):
 
     def url(self, name):
         """返回能够访问到图片的完整地址"""
-        # name :/group1/M00/00/00/wKjzh0_xaR63RExnAAAaDqbNk5E1398.py
+        # name :  group1/M00/00/00/wKjzh0_xaR63RExnAAAaDqbNk5E1398.py
         # 要拼接成完整的 路径 并 返回
         # http://192.168.1.136:8888/group1/M00/00/00/wKjzh0_xaR63RExnAAAaDqbNk5E1398.py
 

@@ -158,12 +158,11 @@ SESSION_CACHE_ALIAS = "default"
 LOGIN_URL = '/users/login'
 
 # 配置Django自定义的存储系统
-# DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
 DEFAULT_FILE_STORAGE = 'utils.fastdfs.storage.FastDFSStorage'
 
-# fastDFS的自定义配置
+# fastDFS的自定义配置(注意在utils/fastdfs/storage.py 中要将相应的写固定的值替换成 settings中配置的 定值参数
 FDFS_CLIENT_CONF = os.path.join(BASE_DIR, 'utils/fastdfs/client.conf')  # 配置文件路径
-SERVER_IP = 'http://192.168.21.134:8888'  # nginx服务器ip地址
+SERVER_IP = 'http://192.168.21.134:8888/'  # nginx服务器ip地址
 
 # 富文本编辑器的配置
 TINYMCE_DEFAULT_CONFIG = {

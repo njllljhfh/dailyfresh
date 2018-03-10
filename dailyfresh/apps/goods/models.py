@@ -10,6 +10,7 @@ from tinymce.models import HTMLField
 class GoodsCategory(BaseModel):
     """商品类别表"""
     name = models.CharField(max_length=20, verbose_name="名称")
+    # logo 保存的是 类选择器,用来确定雪碧图的位置
     logo = models.CharField(max_length=100, verbose_name="标识")
     image = models.ImageField(upload_to="category", verbose_name="图片")
 
@@ -88,7 +89,7 @@ class IndexGoodsBanner(BaseModel):
 
 
 class IndexCategoryGoodsBanner(BaseModel):
-    """主页分类商品展示"""
+    """主页商品分类中的商品展示"""
     DISPLAY_TYPE_CHOICES = (
         (0, "标题"),
         (1, "图片")
