@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'tinymce',  # 富文本编辑器应用要注册
+    'haystack',  # 安装haystack应用, 他可以去对接很多搜索引擎(我们用的whoosh搜索引擎)
     'cart',
     'goods',
     'orders',
@@ -170,3 +171,15 @@ TINYMCE_DEFAULT_CONFIG = {
     'width': 600,
     'height': 400,
 }
+
+# 配置搜索引擎后端
+HAYSTACK_CONNECTIONS = {
+    'default': {
+        # 使用whoosh引擎：提示，如果不需要使用jieba框架实现分词，就使用whoosh_backend
+        'ENGINE': 'haystack.backends.whoosh_cn_backend.WhooshEngine',
+        # 索引文件路径, 会自动生成
+        'PATH': os.path.join(BASE_DIR, 'whoosh_index'),
+    }
+}
+# 当添加、修改、删除数据时，自动生成索引
+HAYSTACK_SIGNAL_PROCESSOR = 'haystack.signals.RealtimeSignalProcessor'
