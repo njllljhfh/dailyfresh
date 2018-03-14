@@ -84,6 +84,7 @@ class AddCartView(View):
                 # dict = json.loads(json字符串)
                 # 将 json数据 转换成 dict数据
                 cart_dict = json.loads(cart_json)
+                print('cart_dict===', cart_dict)
             else:
                 # 如果之前没有购物车的 cookies
                 # 如果不存在, 最后保存的数量 = 当前的数量

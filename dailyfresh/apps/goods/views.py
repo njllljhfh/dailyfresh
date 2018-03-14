@@ -35,8 +35,11 @@ class BaseCartView(View):
         else:
             # 如果用户没有登录,从cookies中取购物车的数据
             cart_json = request.COOKIES.get('cart')
-            # 把 json 数据 转换为 dict
-            cart_dict = json.loads(cart_json)
+            if cart_json is not None:
+                # 把 json 数据 转换为 dict
+                cart_dict = json.loads(cart_json)
+            else:
+                cart_dict = {}
 
         # 无论用户是否登录,都要对cart_dict.values() 进行遍历,获取所有商品的总数量
         for value in cart_dict.values():
