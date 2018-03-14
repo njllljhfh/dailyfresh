@@ -224,7 +224,7 @@ class LoginView(View):
         next = request.GET.get('next')
         if next is None:
             # 去商品主页
-            return HttpResponse('去商品主页')
+            return redirect('/goods/index')
         else:
             # 重定向到用户相关页面
             return redirect(next)

@@ -106,9 +106,9 @@
 {% endblock body %}
 
 {% block bottom_files %}
-    <script type="text/javascript" src="js/jquery-1.12.2.js"></script>
+    {#    <script type="text/javascript"></script>#}
     <script type="text/javascript">
-        var $add_x = $('#add_cart').offset().top;
+        var $add_x = $('#add_cart').offset().to
         var $add_y = $('#add_cart').offset().left;
 
         var $to_x = $('#show_count').offset().top;
@@ -116,16 +116,77 @@
 
         $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
         $('#add_cart').click(function () {
-            $(".add_jump").stop().animate({
-                    'left': $to_y + 7,
-                    'top': $to_x + 7
-                },
-                "fast", function () {
-                    $(".add_jump").fadeOut('fast', function () {
-                        $('#show_count').html(2);
-                    });
+            // 添加购物车点击时间中的 ajax 请求
+            // ajax请求向服务器 上传的数据(即传到视图中的数据 sku_id,count)
+            var data_to_view = {
+                sku_id:{{ sku.id }},
+                count: $('.num_show').val(),  // 数量
+                csrfmiddlewaretoken: '{{ csrf_token }}' //要加引号
+            };
+            $.ajax({
+                url: '/cart/add/',
+                type: 'post',
+                data: data_to_view,  //在视图中,通过 request.POST.get('sku_id'),可以取值,得到 json 数据
+                dataType: 'json'
+            }).done(function (data) {
+                //{'code': 0, 'msg': '购物车数据添加成功', 'cart_num': cart_num}
+                var code = data.code;
+                var msg = data.msg;
+                // code == 0时才有传data.cart_num
+                if (code == 0) {
+                    $(".add_jump").stop().animate({
+                            'left': $to_y + 7,
+                            'top': $to_x + 7
+                        },
+                        "fast", function () {
+                            $(".add_jump").fadeOut('fast', function () {
+                                // 显示最后的数量
+                                $('#show_count').html(data.cart_num);
+                            });
+                        });
+                    alert(msg);
+                }
+                else if (code == 5) {
+                    // 用户没登录,跳转到登录页面
+                    location.href = '/users/login'
+                } else {
+                    alert(msg)
+                }
+            }).fail(function () {
+                alert('网络异常')
+            })
+        });
 
-                });
-        })
+        //购物车的加减号代码(不要求写就是一些前端的效果)
+        $(".add").click(function () {
+            //获取当前数量
+            var num_show = $(".num_show").val();
+            //转为int
+            num_show = parseInt(num_show)
+            //数量+1
+            num_show += 1;
+            //展示添加后的数量
+            $(".num_show").val(num_show);
+            //获取当前的单价
+            var price = $(".show_pirze>em").html()
+            price = parseFloat(price);
+            //计算总价
+            var total = price * num_show;
+            //显示总价 保留两位小数
+            $(".total>em").html(total.toFixed(2));
+        });
+        $(".minus").click(function () {
+            var num_show = $(".num_show").val();
+            num_show = parseInt(num_show)
+            num_show -= 1;
+            if (num_show < 1) {
+                num_show = 1;
+            }
+            $(".num_show").val(num_show);
+            var price = $(".show_pirze>em").html()
+            price = parseFloat(price);
+            var total = price * num_show;
+            $(".total>em").html(total.toFixed(2));
+        });
     </script>
 {% endblock bottom_files %}

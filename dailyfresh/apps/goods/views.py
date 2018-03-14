@@ -1,3 +1,5 @@
+import json
+
 from django.core.cache import cache
 from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
@@ -13,8 +15,39 @@ from goods.models import GoodsCategory, IndexGoodsBanner, IndexPromotionBanner, 
 
 # 首页视图
 
+class BaseCartView(View):
+    """获取购物车数量的类"""
 
-class IndexView(View):
+    def get_cart_num(self, request):
+        cart_num = 0
+        if request.user.is_authenticated():
+            # 如果用户已登录,从redis中取购物车的数据
+            # 购物车数据结构  登录后才能添加的  频繁访问存到redis
+            # 每一个用户不一样 用redis的hash存储方便 cart_userid  ：  {'skuid1':'5','skuid2':'15','skuid3':'25'}
+            # 获取购物车数量  每一个商品数量累加
+            # 获取redis的链接实例
+            redis_conn = get_redis_connection('default')
+            # 获取request中的用户对象
+            user = request.user
+            # 获取购物车中,商品的数量 .hgetall() 得到一个字典  {'skuid1':'5','skuid2':'15','skuid3':'25'}
+            cart_dict = redis_conn.hgetall('cart_%s' % user.id)
+            # cart_dict.values() ---> [5, 15, 25]
+        else:
+            # 如果用户没有登录,从cookies中取购物车的数据
+            cart_json = request.COOKIES.get('cart')
+            # 把 json 数据 转换为 dict
+            cart_dict = json.loads(cart_json)
+
+        # 无论用户是否登录,都要对cart_dict.values() 进行遍历,获取所有商品的总数量
+        for value in cart_dict.values():
+            # 计算购物车中,所有商品的总数量
+            # redis中所有的数据都是字符串
+            cart_num += int(value)
+
+        return cart_num
+
+
+class IndexView(BaseCartView):
 
     def get(self, request):
         # 显示首页
@@ -69,24 +102,8 @@ class IndexView(View):
 
         # 购物车中商品的数量
         # 查询购物车信息：不能被缓存，因为会经常变化
-        cart_num = 0
-
-        if request.user.is_authenticated():
-            # 购物车数据结构  登录后才能添加的  频繁访问存到redis
-            # 每一个用户不一样 用redis的hash存储方便 cart_userid  ：  {'skuid1':'5','skuid2':'15','skuid3':'25'}
-            # 获取购物车数量  每一个商品数量累加
-            # 获取redis的链接实例
-            redis_conn = get_redis_connection('default')
-            # 获取request中的用户对象
-            user = request.user
-            # 获取购物车中,商品的数量 .hgetall() 得到一个字典  {'skuid1':'5','skuid2':'15','skuid3':'25'}
-            cart_dict = redis_conn.hgetall('cart_%s' % user.id)
-
-            # cart.values() ---> [5, 15, 25]
-            for value in cart_dict.values():
-                # 计算购物车中,所有商品的总数量
-                # redis中所有的数据都是字符串
-                cart_num += int(value)
+        # 获取购物车数量的 代码 被提取到了 一个 类中(BaseCartView)
+        cart_num = self.get_cart_num(request)
 
         # 补充购物车数据(不同的数据,要在缓存生成后,再添加到context中)
         context.update(cart_num=cart_num)
@@ -94,7 +111,7 @@ class IndexView(View):
         return render(request, 'index.html', context)
 
 
-class DetailView(View):
+class DetailView(BaseCartView):
     """显示商品详细信息页面"""
 
     # 商品分类信息
@@ -150,7 +167,9 @@ class DetailView(View):
             cache.set("detail_%s" % sku_id, context, 3600)
 
         # 购物车数量
-        cart_num = 0
+        # cart_num = 0
+        cart_num = self.get_cart_num(request)
+
         # 如果是登录的用户
         if request.user.is_authenticated():
             # 获取用户id
@@ -158,13 +177,14 @@ class DetailView(View):
             # 从redis中获取购物车信息
             redis_conn = get_redis_connection("default")
             # 如果redis中不存在，会返回None
-            cart_dict = redis_conn.hgetall("cart_%s" % user.id)
-            for value in cart_dict.values():
-                cart_num += int(value)
+            # cart_dict = redis_conn.hgetall("cart_%s" % user.id)
+            # for value in cart_dict.values():
+            #     cart_num += int(value)
+            # ----------------------------------------------------------
 
             # 浏览记录: lpush history_userid sku_1, sku_2
             # 商品添加到历史记录的数据结构 ‘history_userid’: [sku1.id, sku2.id, sku3.id, sku4.id, sku5.id]
-            # 移除已经存在的本商品浏览记录
+            # 移除已经存在的本商品浏览记录(下面两行代码的作用,即,如果该商品存在于浏览记录中,则将该商品的浏览记录移动到最前面)
             # 第二个参数是 count    count>0   =0     <0
             redis_conn.lrem("history_%s" % user.id, 0, sku_id)
             # 添加新的浏览记录
@@ -178,7 +198,7 @@ class DetailView(View):
         return render(request, 'detail.html', context)
 
 
-class ListView(View):
+class ListView(BaseCartView):
     #  当前类别   水果
     #  排序 default
     #  当前的页码  1
@@ -265,18 +285,18 @@ class ListView(View):
         }
 
         # 购物车数量
-        cart_num = 0
+        cart_num = self.get_cart_num(request)
 
-        # 如果是登录的用户
-        if request.user.is_authenticated():
-            # 获取用户id
-            user = request.user
-            # 从redis中获取购物车信息
-            redis_conn = get_redis_connection("default")
-            # 如果redis中不存在，会返回None
-            cart_dict = redis_conn.hgetall("cart_%s" % user.id)
-            for value in cart_dict.values():
-                cart_num += int(value)
+        # # 如果是登录的用户
+        # if request.user.is_authenticated():
+        #     # 获取用户id
+        #     user = request.user
+        #     # 从redis中获取购物车信息
+        #     redis_conn = get_redis_connection("default")
+        #     # 如果redis中不存在，会返回None
+        #     cart_dict = redis_conn.hgetall("cart_%s" % user.id)
+        #     for value in cart_dict.values():
+        #         cart_num += int(value)
 
         context['cart_num'] = cart_num
 
