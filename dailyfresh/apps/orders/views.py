@@ -271,7 +271,7 @@ class CommitOrderView(LoginRequiredJsonMixin, TransactionAtomicMixin, View):
                     order=order,  # 当前商品属于的订单
                     sku=sku,  # 当前商品
                     count=sku_count,  # 当前商品的数量
-                    price=sku_amount,  # 当前商品总价
+                    price=sku.price,  # 下单时，该商品的单价（即历史单价，该价格以后可能会变，比如做活动）
                 )
 
             # 循环结束后，把订单总数量和总价格 添加进数据库
@@ -311,7 +311,9 @@ class UserOrdersView(LoginRequiredMixin, View):
             for order_sku in order_skus:
                 sku = order_sku.sku
                 sku.count = order_sku.count
-                sku.amount = sku.price * sku.count
+                # 这里应该是历史单价 × 该商品的数量
+                sku.amount = order_sku.price * sku.count
+                sku.price = order_sku.price  # 下单时，该商品的单价（即历史单价，该价格以后可能会变，比如做活动）
                 order.skus.append(sku)
         # 分页
         page = int(page)

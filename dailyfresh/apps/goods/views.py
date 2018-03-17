@@ -124,7 +124,7 @@ class DetailView(BaseCartView):
     # 评论信息
     # 如果登陆 查询购物车
     def get(self, request, sku_id):
-        # 尝试获取缓存数据
+        # 尝试获取 当前商品的 缓存数据
         context = cache.get("detail_%s" % sku_id)
 
         # 如果缓存不存在

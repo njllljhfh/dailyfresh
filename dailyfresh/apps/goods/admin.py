@@ -25,6 +25,10 @@ class BaseAdmin(admin.ModelAdmin):
         # 修改了数据库数据就需要删除缓存
         cache.delete('indexpage_static_cache')
 
+        """删除 修该的商品的缓存(如果不删除，会导致商品详情页上的信息是旧的缓存中的数据，
+         因为在DetailView视图中判断如果有旧的缓存，就不会生成新的缓存)"""
+        cache.delete("detail_%s" % obj.id)
+
     def delete_model(self, request, obj):
         """运营人员在admin界面中,删除数据时会走的方法"""
         obj.delete()
