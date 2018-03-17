@@ -66,7 +66,7 @@ class IndexView(BaseCartView):
             # print(len(categories))
             # 2.获取 商品轮播图 的幻灯片
             banners = IndexGoodsBanner.objects.all()
-            print(len(banners))
+            # print(len(banners))
             # 3.获取 活动 的数据
             promotion_banners = IndexPromotionBanner.objects.all().order_by('index')
 
@@ -162,7 +162,7 @@ class DetailView(BaseCartView):
                 "categories": categories,
                 "sku": sku,
                 "orders": sku_orders,
-                "new_skus": new_skus,
+                "new_skus": new_skus,  # 最新推荐商品
                 "other_skus": other_skus
             }
 

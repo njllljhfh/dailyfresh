@@ -1,3 +1,4 @@
+import json
 import re
 
 import itsdangerous
@@ -16,6 +17,7 @@ from goods.models import GoodsSKU
 from users.models import User, Address
 
 from utils.views import LoginRequiredMixin
+from django_redis import get_redis_connection
 
 
 # Create your views here.
@@ -217,6 +219,45 @@ class LoginView(View):
             # 如果勾选了<记住用户> 则Cookie 保存2周
             request.session.set_expiry(None)
 
+        # 合并购物车  要求:
+        # 在登录跳转前 ,合并redis和cookie购物车上商品数量信息
+        # 如果cookie中存在的，redis中也有，则进行数量累加
+        # 如果cookie中存在的，redis中没有，则生成新的购物车数据
+        # 合并完后 清除cookie里的购物车数据
+
+        # 1. 获取cookie中的购物车数据
+        cart_json = request.COOKIES.get('cart')  # cookies 中的数据取出来 是 str
+        if cart_json is not None:
+            cart_dict_cookies = json.loads(cart_json)
+        else:
+            cart_dict_cookies = {}
+
+        # 2. 获取redis中的购物车数据
+        redis_conn = get_redis_connection('default')
+        cart_dict_redis = redis_conn.hgetall('cart_%s' % user.id)  # {b'1': b'7'}
+        # print(cart_dict_cookies)
+        # print(cart_dict_redis)
+
+        # 遍历所有的cookies中的数据
+        for sku_id, count in cart_dict_cookies.items():
+            # 因为redis里的数据全部是字节类型 判断时要把cookie里的id转化为字节
+            sku_id = sku_id.encode()  # 1 --> b'1'
+            # print(sku_id)
+            # 判断cookies里的商品是否在redis里
+            if sku_id in cart_dict_redis:
+                # 当前遍历到的 商品 在redis 里的数量
+                origin_count = cart_dict_redis[sku_id]  # b'2'
+                count += int(origin_count)
+
+            cart_dict_redis[sku_id] = count
+
+        # 把数据存到redis中
+        # 字典数据存到redis  注意 cart_dict_redis不能是空字典
+        # def hmset(self, name, mapping):
+        if cart_dict_redis:
+            redis_conn.hmset('cart_%s' % user.id, cart_dict_redis)
+            # print(111111)
+
         # 6.如果之前是去用户相关的页面, 而重定向到登录页面的,
         # 那么登录以后就跳转到用户相关的界面
         # http://127.0.0.1:8000/users/login?next=/users/address
@@ -224,10 +265,15 @@ class LoginView(View):
         next = request.GET.get('next')
         if next is None:
             # 去商品主页
-            return redirect('/goods/index')
+            response = redirect('/goods/index')
         else:
-            # 重定向到用户相关页面
-            return redirect(next)
+            # 重定向到用户相关页面(属于get请求)
+            response = redirect(next)
+
+        # 删除 cookies 中的数据
+        response.delete_cookie('cart')
+
+        return response
 
 
 class LogoutView(View):
@@ -316,9 +362,6 @@ class AddressView(LoginRequiredMixin, View):
             print(3333333333333333333)
 
         return redirect(reverse("users:address"))
-
-
-from django_redis import get_redis_connection
 
 
 class UserInfoView(LoginRequiredMixin, View):

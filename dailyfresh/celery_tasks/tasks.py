@@ -81,7 +81,7 @@ def generate_static_index_html():
     # print(content)
 
     # 把content保存成 一个 静态文件
-    # 获取要写入的文件的路径,存到 statc 目录下 index.html
+    # 获取要写入的文件的路径,存到 static 目录下 index.html
     file_path = os.path.join(settings.STATICFILES_DIRS[0], 'index.html')
 
     # 把数据写入 static/index.html 文件中

@@ -48,20 +48,24 @@
                 {% endfor %}
 
             </div>
-
-            <div class="goods_num clearfix">
-                <div class="num_name fl">数 量：</div>
-                <div class="num_add fl">
-                    <input type="text" class="num_show fl" value="1">
-                    <a href="javascript:;" class="add fr">+</a>
-                    <a href="javascript:;" class="minus fr">-</a>
+            <form action="{% url 'orders:place' %}" method="post">
+                {% csrf_token %}
+                {#这个隐藏的 input 用来向 PlaceOrdereView 视图中 传递数据#}
+                <input type="hidden" name="sku_ids" value="{{ sku.id }}">
+                <div class="goods_num clearfix">
+                    <div class="num_name fl">数 量：</div>
+                    <div class="num_add fl">
+                        <input type="text" name="count" class="num_show fl" value="1">
+                        <a href="javascript:;" class="add fr">+</a>
+                        <a href="javascript:;" class="minus fr">-</a>
+                    </div>
                 </div>
-            </div>
-            <div class="total">总价：<em>16.80元</em></div>
-            <div class="operate_btn">
-                <a href="javascript:;" class="buy_btn">立即购买</a>
-                <a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
-            </div>
+                <div class="total">总价：<em>16.80元</em></div>
+                <div class="operate_btn">
+                    <input type="submit" class="buy_btn" value="立即购买">
+                    <a href="javascript:;" class="add_cart" id="add_cart">加入购物车</a>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -108,7 +112,7 @@
 {% block bottom_files %}
     {#    <script type="text/javascript"></script>#}
     <script type="text/javascript">
-        var $add_x = $('#add_cart').offset().to
+        var $add_x = $('#add_cart').offset().top;
         var $add_y = $('#add_cart').offset().left;
 
         var $to_x = $('#show_count').offset().top;
@@ -116,7 +120,7 @@
 
         $(".add_jump").css({'left': $add_y + 80, 'top': $add_x + 10, 'display': 'block'})
         $('#add_cart').click(function () {
-            // 添加购物车点击时间中的 ajax 请求
+            // 添加购物车点击事件中的 ajax 请求
             // ajax请求向服务器 上传的数据(即传到视图中的数据 sku_id,count)
             var data_to_view = {
                 sku_id:{{ sku.id }},

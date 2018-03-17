@@ -34,6 +34,7 @@ class BaseAdmin(admin.ModelAdmin):
         # 后台删除内容时,要删除缓存中的数据
         cache.delete('indexpage_static_cache')
 
+
 # 运营人员对下列内容进行更改时,都要重新生成index.html的静态页面
 class GoodsCategoryAdmin(BaseAdmin):
     pass
