@@ -27,8 +27,10 @@ class BaseCartView(View):
             # 获取购物车数量  每一个商品数量累加
             # 获取redis的链接实例
             redis_conn = get_redis_connection('default')
+
             # 获取request中的用户对象
             user = request.user
+
             # 获取购物车中,商品的数量 .hgetall() 得到一个字典  {'skuid1':'5','skuid2':'15','skuid3':'25'}
             cart_dict = redis_conn.hgetall('cart_%s' % user.id)
             # cart_dict.values() ---> [5, 15, 25]
@@ -64,9 +66,11 @@ class IndexView(BaseCartView):
             # 1.获取 全部商品分类 的数据
             categories = GoodsCategory.objects.all()
             # print(len(categories))
+
             # 2.获取 商品轮播图 的幻灯片
             banners = IndexGoodsBanner.objects.all()
             # print(len(banners))
+
             # 3.获取 活动 的数据
             promotion_banners = IndexPromotionBanner.objects.all().order_by('index')
 
@@ -79,11 +83,13 @@ class IndexView(BaseCartView):
                 # 等号左边的是字段名,右边的是for中的变量
                 title_banners = IndexCategoryGoodsBanner.objects.filter(category=category, display_type=0).order_by(
                     'index')
+
                 # 将 title_banners 保存到 category对象的属性中
                 category.title_banners = title_banners
 
                 image_banners = IndexCategoryGoodsBanner.objects.filter(category=category, display_type=1).order_by(
                     'index')
+
                 # 将 image_banners 保存到 category对象的属性中
                 category.image_banners = image_banners
 
@@ -92,6 +98,7 @@ class IndexView(BaseCartView):
                 'banners': banners,
                 'promotion_banners': promotion_banners,
             }
+
             # 把登录后的用户 在页面上相同的数据 保存到缓存中 不用每次都查找
             # settings 中的CACHE 就是设置的 缓存的存储
             # 设置缓存：cache.set('key', 内容, 有效期)

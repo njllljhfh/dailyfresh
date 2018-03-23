@@ -19,6 +19,7 @@ class BaseAdmin(admin.ModelAdmin):
         :return:
         """
         obj.save()
+
         # 数据一旦改变,就要生成新的index静态页面(celery,worker中的异步任务)
         generate_static_index_html.delay()
 

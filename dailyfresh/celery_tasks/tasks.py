@@ -25,32 +25,34 @@ from django.core.mail import send_mail
 app = Celery('celery_tasks.tasks', broker='redis://192.168.21.134:6379/3')
 
 
-# 发送邮件的 方法(这个不是视图)
-# 使用装饰器 让方法 变成 celery的broker中的任务
 @app.task
 def send_mail_method(recipient_list, user_name, token):
+    """发送邮件的 方法(这个不是视图)
+       使用装饰器 让方法 变成 celery的broker中的任务"""
+    # send_mail(subject, message, from_email, recipient_list)
     # 参1:邮件标题
     # 参2:邮件中的文本内容(message只能传入纯文本内容)
     # 参3:邮件发送方
     # 参4:邮件接收方(recipient_list,可以是多个人接收)
     # html_message, 可传能被浏览器渲染的标签的文本信息
-    # send_mail(subject, message, from_email, recipient_list)
     html_body = '<h1>尊敬的用户 %s, 感谢您注册天天生鲜！</h1>' \
                 '<br/><p>请点击此链接激活您的帐号<a href="http://127.0.0.1:8000/users/active/%s">' \
                 'http://127.0.0.1:8000/users/active/%s</a></p>' % (user_name, token, token)
     send_mail('天天生鲜激活', '', settings.EMAIL_FROM, recipient_list, html_message=html_body)
 
 
-# 生成 主页静态页面文件 的方法
 @app.task
 def generate_static_index_html():
+    """生成 主页静态页面文件 的方法"""
     # 显示首页
     # 1.获取 全部商品分类 的数据
     categories = GoodsCategory.objects.all()
     # print(len(categories))
+
     # 2.获取 商品轮播图 的幻灯片
     banners = IndexGoodsBanner.objects.all()
     print(len(banners))
+
     # 3.获取 活动 的数据
     promotion_banners = IndexPromotionBanner.objects.all()
 
@@ -62,10 +64,12 @@ def generate_static_index_html():
         # 按照index排序 ,(如1234)
         # 等号左边的是字段名,右边的是for中的变量
         title_banners = IndexCategoryGoodsBanner.objects.filter(category=category, display_type=0).order_by('index')
+
         # 将 title_banners 保存到 category对象的属性中
         category.title_banners = title_banners
 
         image_banners = IndexCategoryGoodsBanner.objects.filter(category=category, display_type=1).order_by('index')
+
         # 将 image_banners 保存到 category对象的属性中
         category.image_banners = image_banners
 

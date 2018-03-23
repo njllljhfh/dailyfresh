@@ -22,6 +22,7 @@ class AddCartView(View):
     def post(self, request):
         # 用户信息user
         user = request.user
+
         # 应该接收的数据 skuid  数量 count
         # 接收传来数据方法里的参数equest.GETrequest.POST
         sku_id = request.POST.get('sku_id')
@@ -59,9 +60,11 @@ class AddCartView(View):
             # 如果用户登录,把数据存到redis   cart_userid: {'skuid1':10,'skuid2':3 ....}
             # 获取redis的链接实例
             redis_conn = get_redis_connection('default')
+
             # 判断当前的商品在数据库中是否已经有 数量 存在
             # 获取当前商品的数量(origin_count,如果没有数据,返回的是None)
             origin_count = redis_conn.hget('cart_%s' % user.id, sku_id)
+
             # 如果存在, 最后保存的数量 = 之前的数量+当前的数量
             # 如果不存在, 最后保存的数量 = 当前的数量
             if origin_count is not None:
@@ -83,6 +86,7 @@ class AddCartView(View):
                 # json字符串 = json.dumps(字典)
                 # dict = json.loads(json字符串)
                 # 将 json数据 转换成 dict数据
+
                 cart_dict = json.loads(cart_json)
                 # print('cart_dict===', cart_dict)  # cart_dict=== {'10': 7}
             else:
@@ -94,6 +98,7 @@ class AddCartView(View):
             if sku_id in cart_dict:
                 # 如果存在,获取当前商品在之前的cookies中的购物车数量
                 origin_count = cart_dict.get(sku_id)
+
                 # 把之前cookies中的 购物车数量 累加到 当前的数量上,得到购物车的总数
                 count += origin_count
 
