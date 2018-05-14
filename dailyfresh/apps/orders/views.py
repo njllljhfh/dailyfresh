@@ -37,7 +37,7 @@ class PlaceOrdereView(View):
         # 只有从详情页面 点击 立即购买 才会传 count
         count = request.POST.get('count')
 
-        # --------------
+        # --------------用户没有登录时，点击立即购买，或者点击购物车中的提交。
         if not user.is_authenticated():
             # 重定向到购物车
             response = redirect('/users/login?next=/cart')
@@ -172,6 +172,8 @@ class CommitOrderView(LoginRequiredJsonMixin, TransactionAtomicMixin, View):
     # 有大量数据传过来 用于生成订单 用post ajax请求,ajax请求不能 重定向到其他页面
 
     def post(self, request):
+        print('我是请求头 X-Requested-With:  ', request.META['HTTP_X_REQUESTED_WITH'])
+
         # 后端 只负责订单生成
         # 接收的参数  user 地址id 支付方式 商品id  数量
         user = request.user
@@ -202,7 +204,7 @@ class CommitOrderView(LoginRequiredJsonMixin, TransactionAtomicMixin, View):
 
         # 订单号规则 20180315155959+userid
         # timezone 是 django下的工具
-        # strftime 格式化时间的 字符串
+        # strftime 格式化时间的 字符串(将时间转换为字符串)
         # 生成订单号
         order_id = timezone.now().strftime('%Y%m%d%H%M%S') + str(user.id)
 
@@ -385,7 +387,7 @@ class PayView(LoginRequiredJsonMixin, View):
         )
         # print(444)
         # 发送支付请求  返回 一个支付页面url的参数
-        print(123123, order.order_id)
+        # print(123123, order.order_id)
         order_string = alipay.api_alipay_trade_page_pay(
             out_trade_no=order.order_id,  # 订单号(out_trade_no)
             total_amount=str(order.total_amount),  # 这里注意不支持decimal 转为字符串
@@ -398,7 +400,7 @@ class PayView(LoginRequiredJsonMixin, View):
         # url 是用户要支付的显示页面的url(完整的url)
         url = settings.ALIPAY_URL + '?' + order_string
         # 把url返回 给浏览器
-        print(666)
+        # print(666)
         return JsonResponse({'code': 0, 'msg': '请求支付成功', 'url': url})
 
 
@@ -457,26 +459,26 @@ class CheckPayStatusView(View):
             # WAIT_BUYER_PAY  正在生成支付 还不能支付  还要继续查 直到有结果
 
             # 去支付宝查询当前订单的支付状态
-            print(888)
-            print(type(order_id))
-            print(order_id)
+            # print(888)
+            # print(type(order_id))
+            # print(order_id)
             alipay_response = alipay.api_alipay_trade_query(order_id)
-            print('alipay_response=', alipay_response)
+            # print('alipay_response=', alipay_response)
 
-            print(999)
+            # print(999)
             # 获取响应码和响应信息
             code = alipay_response.get('code')
-            print('code= ', code)
+            # print('code= ', code)
             trade_status = alipay_response.get('trade_status')
-            print('trade_status= ', trade_status)
+            # print('trade_status= ', trade_status)
 
             if code == '10000' and trade_status == 'TRADE_SUCCESS':
                 # 支付成功
                 # 状态改为未发货
-                print('更改order。status')
+                # print('更改order。status')
                 order.status = OrderInfo.ORDER_STATUS_ENUM['UNSEND']
                 # 保存支付宝的交易号
-                print('更改order。trade')
+                # print('更改order。trade')
                 order.trade_id = alipay_response.get('trade_no')
                 # 保存到数据库
                 order.save()
@@ -524,6 +526,8 @@ class CommentView(LoginRequiredMixin, View):
 
         for i in range(1, total_count + 1):
             # 要评论的商品
+            # html模板中，通过form表单传过来的数据如下：
+            # <input type="hidden" name="sku_{{ forloop.counter }}" value="{{ sku.id }}">
             sku_id = request.POST.get("sku_%d" % i)
             # 获取评论内容
             content = request.POST.get('content_%d' % i, '')

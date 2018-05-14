@@ -10,6 +10,9 @@ from django.conf import settings
 from utils.models import BaseModel
 
 
+# 注意：该项目的应用在apps文件目录下，不是在项目根目录下
+
+# users应用中的模型类User是使用Django自带的用户认证系统维护的
 class User(AbstractUser, BaseModel):
     """用户"""
 
@@ -24,6 +27,8 @@ class User(AbstractUser, BaseModel):
         # dumps 通过算法 把用户id转码,生成token
         token = serializer.dumps({"confirm": self.id})  # 返回bytes类型
         return token.decode()  # token 是 b'aasdfwefasdfasdfas' 这种形式,所以要用 decode 解码
+        # python3 中 要么是unicode,要么是bytes类型
+        # Python2 中 要么是str（非unicode）,要么是unicode类型。
 
 
 class Address(BaseModel):

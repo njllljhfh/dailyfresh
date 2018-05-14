@@ -14,11 +14,20 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# os.path.abspath(__file__), 返回当前文件所在的绝对路径
+# os.path.dirname(xxx), 返回xxx所在目录的绝对路径
+print(BASE_DIR)
+# print(os.path.abspath(__file__))
+# print(os.path.dirname(os.path.abspath(__file__)))
 
 # 把 apps 添加到 导包路径
+# 原因：在settings.py中设置AUTH_USER_MODEL时，编码规则为'应用.用户模型类'
+# 但是，应用在apps/文件目录下，为了保证正确的编码，我们需要增加导包路径
+# 同时，为了配合AUTH_USER_MODEL的配置，应用的安装直接使用users，不要使用apps.users
 import sys
 
 sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
+print(os.path.join(BASE_DIR, 'apps'))
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
@@ -27,9 +36,11 @@ sys.path.insert(1, os.path.join(BASE_DIR, 'apps'))
 SECRET_KEY = '5(&e!m%!52#mmjt8dbeer5d$35@hli$_yjf#m=eipn)py*1-i-'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# DEBUG = True
+DEBUG = False  # 改为False后，不在提供静态文件访问
 
-ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']  # 项目上线后，要改成‘*'
 
 # Application definition
 
@@ -51,7 +62,7 @@ INSTALLED_APPS = (
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',  # 对post请求有才有用，对get请求没有用
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.auth.middleware.SessionAuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -61,6 +72,8 @@ MIDDLEWARE_CLASSES = (
 
 ROOT_URLCONF = 'dailyfresh.urls'
 
+# 注意'APP_DIRS':TRUE 指的是应用下的templates,django会先去'DIRS'指定的路径里找模板文件.
+# 如果不存在,会去应用下找templates文件夹里的模板
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -91,19 +104,20 @@ DATABASES = {
         'HOST': '192.168.21.134',  # mysql主服务器地址
         'PORT': '3306',
     },
-    'slave': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'dailyfresh',
-        'USER': 'root',
-        'PASSWORD': 'mysql',
-        'HOST': '192.168.47.29',  # mysql从服务器地址
-        'PORT': '3306',
-    }
+    # 'slave': {
+    #     'ENGINE': 'django.db.backends.mysql',
+    #     'NAME': 'dailyfresh',
+    #     'USER': 'root',
+    #     'PASSWORD': 'mysql',
+    #     'HOST': '192.168.47.29',  # mysql从服务器地址
+    #     'PORT': '3306',
+    # }
 }
 
 # 主从的读写分离配置
 DATABASES_ROUTERS = ['utils.db_routers.MasterSlaveDBRouter']
 
+# 迁移前，需要在settings.py文件中设置：AUTH_USER_MODEL = '应用名.用户模型类名'
 # 固定的语法格式 (应用名.用户模型类名)
 # 指定用来认证模型的应用 的路径
 AUTH_USER_MODEL = 'users.User'
@@ -124,9 +138,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
 
 # 配置静态文件加载路径
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
 # 配置激活Email
@@ -137,7 +151,7 @@ EMAIL_HOST_USER = 'dragonax@163.com'  # 授权邮箱
 EMAIL_HOST_PASSWORD = 'python6'  # 邮箱授权时获得的密码,非注册登录的密码
 EMAIL_FROM = 'dragonax@163.com'  # 发件人抬头,就是发邮件用的地址
 
-# 缓存(redis)
+# 缓存(redis),服务器端用来存储session
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",

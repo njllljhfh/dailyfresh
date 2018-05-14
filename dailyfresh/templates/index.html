@@ -56,7 +56,7 @@
                         <a href="{% url 'goods:detail' title_banner.sku.id %}">{{ title_banner.sku.name }}</a>
                     {% endfor %}
                 </div>
-                <a href="#" class="goods_more fr" id="fruit_more">查看更多 ></a>
+                <a href="{% url 'goods:list' category.id 1 %}" class="goods_more fr" id="fruit_more">查看更多 ></a>
             </div>
 
             <div class="goods_con clearfix">

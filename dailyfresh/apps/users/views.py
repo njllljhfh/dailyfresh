@@ -173,6 +173,8 @@ class LoginView(View):
         return render(request, 'login.html')
 
     def post(self, request):
+        print('我是请求头Content-Type: ', request.META['CONTENT_TYPE'])
+
         # 1.接收数据
         username = request.POST.get('username')
         psw = request.POST.get('pwd')
@@ -210,7 +212,7 @@ class LoginView(View):
         # 获取 用户是否在 登录界面勾选 <记住用户> 选项
         remembered = request.POST.get('remembered')
 
-        # 将session存在redis中 , 在 settings 中配置
+        # 服务器端将session存在redis中 , 在 settings 中配置
 
         if remembered != 'on':
             # 如果没勾选<记住用户> 则在关闭浏览器时, Cookie过期
@@ -233,6 +235,7 @@ class LoginView(View):
             cart_dict_cookies = {}
 
         # 2. 获取redis中的购物车数据
+        # 'default'是在settings.py文件中设置的
         redis_conn = get_redis_connection('default')
         cart_dict_redis = redis_conn.hgetall('cart_%s' % user.id)  # {b'1': b'7'}
         # print(cart_dict_cookies)
@@ -241,7 +244,7 @@ class LoginView(View):
         # 遍历所有的cookies中的数据
         for sku_id, count in cart_dict_cookies.items():
             # 因为redis里的数据全部是字节类型 判断时要把cookie里的id转化为字节
-            sku_id = sku_id.encode()  # 1 --> b'1'
+            sku_id = sku_id.encode()  # '1' --> b'1'
             # print(sku_id)
             # 判断cookies里的商品是否在redis里
             if sku_id in cart_dict_redis:

@@ -1,0 +1,1089 @@
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Mar 24 21:47:56 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 192.168.21.134:8090 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:42896 (port auto-assigned) fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x195c320
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x195c320 pid: 10037 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10037)
+spawned uWSGI worker 1 (pid: 10041, cores: 2)
+spawned uWSGI worker 2 (pid: 10042, cores: 2)
+spawned uWSGI worker 3 (pid: 10043, cores: 2)
+spawned uWSGI worker 4 (pid: 10045, cores: 2)
+spawned uWSGI http 1 (pid: 10047)
+[pid: 10045|app: 0|req: 1/1] 192.168.21.134 () {38 vars in 687 bytes} [Sat Mar 24 13:48:13 2018] GET /users/login => generated 2319 bytes in 235 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 10042|app: 0|req: 1/2] 192.168.21.134 () {38 vars in 668 bytes} [Sat Mar 24 13:48:13 2018] GET /static/css/reset.css => generated 94 bytes in 297 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 10041|app: 0|req: 2/3] 192.168.21.134 () {38 vars in 664 bytes} [Sat Mar 24 13:48:13 2018] GET /static/css/main.css => generated 93 bytes in 308 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 10041|app: 0|req: 2/4] 192.168.21.134 () {38 vars in 685 bytes} [Sat Mar 24 13:48:13 2018] GET /static/images/logo02.png => generated 98 bytes in 304 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 10043|app: 0|req: 1/5] 192.168.21.134 () {38 vars in 634 bytes} [Sat Mar 24 13:48:13 2018] GET /favicon.ico => generated 85 bytes in 206 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 10041|app: 0|req: 3/6] 192.168.21.134 () {40 vars in 717 bytes} [Sat Mar 24 13:48:16 2018] GET /users/login => generated 2319 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 10045|app: 0|req: 2/7] 192.168.21.134 () {38 vars in 667 bytes} [Sat Mar 24 13:48:16 2018] GET /static/css/reset.css => generated 94 bytes in 3 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 10041|app: 0|req: 4/8] 192.168.21.134 () {38 vars in 665 bytes} [Sat Mar 24 13:48:16 2018] GET /static/css/main.css => generated 93 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 10042|app: 0|req: 2/9] 192.168.21.134 () {38 vars in 685 bytes} [Sat Mar 24 13:48:16 2018] GET /static/images/logo02.png => generated 98 bytes in 2 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10047)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Mar 24 22:27:10 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uWSGI http bound on 192.168.21.134:8090 fd 4
+uwsgi socket 0 bound to TCP address 127.0.0.1:45125 (port auto-assigned) fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0xe0e360
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xe0e360 pid: 10625 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10625)
+spawned uWSGI worker 1 (pid: 10632, cores: 2)
+spawned uWSGI worker 2 (pid: 10633, cores: 2)
+spawned uWSGI worker 3 (pid: 10635, cores: 2)
+spawned uWSGI worker 4 (pid: 10637, cores: 2)
+spawned uWSGI http 1 (pid: 10639)
+SIGINT/SIGQUIT received...killing workers...
+gateway "uWSGI http 1" has been buried (pid: 10639)
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+goodbye to uWSGI.
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Mar 24 22:43:41 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x2405270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2405270 pid: 11244 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11244)
+spawned uWSGI worker 1 (pid: 11250, cores: 2)
+spawned uWSGI worker 2 (pid: 11251, cores: 2)
+spawned uWSGI worker 3 (pid: 11253, cores: 2)
+spawned uWSGI worker 4 (pid: 11256, cores: 2)
+[pid: 11251|app: 0|req: 1/1] 192.168.21.134 () {40 vars in 664 bytes} [Sat Mar 24 14:44:00 2018] GET /favicon.ico => generated 85 bytes in 215 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 11251|app: 0|req: 2/2] 192.168.21.134 () {42 vars in 752 bytes} [Sat Mar 24 14:44:08 2018] GET /users/login => generated 2319 bytes in 8 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11250|app: 0|req: 1/3] 192.168.21.134 () {50 vars in 946 bytes} [Sat Mar 24 14:44:45 2018] POST /users/login => generated 0 bytes in 398 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 0)
+[pid: 11250|app: 0|req: 2/4] 192.168.21.134 () {42 vars in 820 bytes} [Sat Mar 24 14:44:53 2018] GET /goods/detail/6 => generated 11283 bytes in 140 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11250|app: 0|req: 3/5] 192.168.21.134 () {42 vars in 823 bytes} [Sat Mar 24 14:46:09 2018] GET /goods/detail/6 => generated 11283 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11250|app: 0|req: 4/6] 192.168.21.134 () {42 vars in 820 bytes} [Sat Mar 24 14:46:30 2018] GET /goods/detail/5 => generated 11735 bytes in 49 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11253|app: 0|req: 1/7] 192.168.21.134 () {42 vars in 809 bytes} [Sat Mar 24 14:47:10 2018] GET /users/info => generated 6611 bytes in 669 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11256|app: 0|req: 1/8] 192.168.21.1 () {38 vars in 605 bytes} [Sat Mar 24 14:49:37 2018] GET /js/slideshow.js => generated 89 bytes in 365 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+Gracefully killing worker 1 (pid: 11250)...
+...brutally killing workers...
+worker 1 buried after 3 seconds
+worker 2 buried after 3 seconds
+worker 3 buried after 3 seconds
+worker 4 buried after 3 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Sat Mar 24 15:03:59 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x1474b20
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+WSGI app 0 (mountpoint='') ready in 16 seconds on interpreter 0x1474b20 pid: 11244 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 11244)
+spawned uWSGI worker 1 (pid: 11768, cores: 2)
+spawned uWSGI worker 2 (pid: 11770, cores: 2)
+spawned uWSGI worker 3 (pid: 11772, cores: 2)
+spawned uWSGI worker 4 (pid: 11774, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Thu Apr 12 23:52:12 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x2334270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x2334270 pid: 11369 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11369)
+spawned uWSGI worker 1 (pid: 11373, cores: 2)
+spawned uWSGI worker 2 (pid: 11374, cores: 2)
+spawned uWSGI worker 3 (pid: 11375, cores: 2)
+spawned uWSGI worker 4 (pid: 11378, cores: 2)
+[pid: 11375|app: 0|req: 1/1] 192.168.21.134 () {40 vars in 653 bytes} [Thu Apr 12 15:57:02 2018] GET /favicon.ico => generated 85 bytes in 234 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 11378|app: 0|req: 1/2] 192.168.21.134 () {42 vars in 759 bytes} [Thu Apr 12 15:57:19 2018] GET /users/login => generated 2319 bytes in 237 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存为空
+[pid: 11373|app: 0|req: 1/3] 192.168.21.134 () {44 vars in 845 bytes} [Thu Apr 12 15:57:40 2018] GET /goods/index => generated 21349 bytes in 530 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11373|app: 0|req: 2/4] 192.168.21.134 () {42 vars in 806 bytes} [Thu Apr 12 15:57:50 2018] GET /users/info => generated 6611 bytes in 36 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11375|app: 0|req: 2/5] 192.168.21.134 () {42 vars in 802 bytes} [Thu Apr 12 15:57:53 2018] GET /orders/1 => generated 11225 bytes in 296 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11373|app: 0|req: 3/6] 192.168.21.134 () {42 vars in 805 bytes} [Thu Apr 12 15:58:00 2018] GET /orders/3 => generated 10268 bytes in 75 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11378|app: 0|req: 2/7] 192.168.21.134 () {42 vars in 805 bytes} [Thu Apr 12 15:58:04 2018] GET /orders/5 => generated 7780 bytes in 178 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11378|app: 0|req: 3/8] 192.168.21.134 () {42 vars in 809 bytes} [Thu Apr 12 15:58:09 2018] GET /users/info => generated 6611 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11373|app: 0|req: 4/9] 192.168.21.134 () {42 vars in 815 bytes} [Thu Apr 12 15:58:12 2018] GET /users/address => generated 3800 bytes in 19 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+...brutally killing workers...
+Gracefully killing worker 1 (pid: 11373)...
+Gracefully killing worker 4 (pid: 11378)...
+Gracefully killing worker 3 (pid: 11375)...
+Gracefully killing worker 2 (pid: 11374)...
+worker 1 buried after 2 seconds
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Thu Apr 12 16:14:50 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x1c56b20
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1c56b20 pid: 11369 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 11369)
+spawned uWSGI worker 1 (pid: 12356, cores: 2)
+spawned uWSGI worker 2 (pid: 12358, cores: 2)
+spawned uWSGI worker 3 (pid: 12361, cores: 2)
+spawned uWSGI worker 4 (pid: 12365, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Tue Apr 17 12:37:41 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0xed0270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0xed0270 pid: 29930 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 29930)
+spawned uWSGI worker 1 (pid: 29937, cores: 2)
+spawned uWSGI worker 2 (pid: 29939, cores: 2)
+spawned uWSGI worker 3 (pid: 29940, cores: 2)
+spawned uWSGI worker 4 (pid: 29942, cores: 2)
+[pid: 29937|app: 0|req: 1/1] 192.168.21.134 () {38 vars in 596 bytes} [Tue Apr 17 04:39:17 2018] GET /favicon.ico => generated 85 bytes in 511 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 29937|app: 0|req: 2/2] 192.168.21.134 () {38 vars in 604 bytes} [Tue Apr 17 04:39:35 2018] GET /js/slideshow.js => generated 89 bytes in 5 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 29942|app: 0|req: 1/3] 192.168.21.134 () {40 vars in 702 bytes} [Tue Apr 17 04:39:45 2018] GET /users/login => generated 2319 bytes in 242 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 1/4] 192.168.21.134 () {50 vars in 946 bytes} [Tue Apr 17 04:40:14 2018] POST /users/login => generated 0 bytes in 432 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 0)
+[pid: 29937|app: 0|req: 3/5] 192.168.21.134 () {42 vars in 820 bytes} [Tue Apr 17 04:40:19 2018] GET /goods/detail/3 => generated 11513 bytes in 128 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 2/6] 192.168.21.134 () {42 vars in 816 bytes} [Tue Apr 17 04:41:03 2018] GET /users/logout => generated 0 bytes in 23 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 29937|app: 0|req: 4/7] 192.168.21.134 () {42 vars in 770 bytes} [Tue Apr 17 04:41:05 2018] GET /goods/index => generated 21355 bytes in 90 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 29940|app: 0|req: 1/8] 192.168.21.134 () {42 vars in 776 bytes} [Tue Apr 17 04:41:13 2018] GET /goods/detail/3 => generated 11519 bytes in 357 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 29939|app: 0|req: 3/9] 192.168.21.134 () {40 vars in 661 bytes} [Tue Apr 17 04:44:55 2018] GET /js/slideshow.js => generated 89 bytes in 14 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 4 (pid: 29942)...
+Gracefully killing worker 2 (pid: 29939)...
+Gracefully killing worker 1 (pid: 29937)...
+Gracefully killing worker 3 (pid: 29940)...
+worker 3 buried after 3 seconds
+worker 1 buried after 4 seconds
+worker 2 buried after 4 seconds
+worker 4 buried after 4 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Tue Apr 17 07:38:55 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x1376b20
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x1376b20 pid: 29930 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 29930)
+spawned uWSGI worker 1 (pid: 32036, cores: 2)
+spawned uWSGI worker 2 (pid: 32041, cores: 2)
+spawned uWSGI worker 3 (pid: 32043, cores: 2)
+spawned uWSGI worker 4 (pid: 32046, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Thu Apr 19 16:02:16 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0xf51270
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xf51270 pid: 10478 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 10478)
+spawned uWSGI worker 1 (pid: 10482, cores: 2)
+spawned uWSGI worker 2 (pid: 10483, cores: 2)
+spawned uWSGI worker 3 (pid: 10484, cores: 2)
+spawned uWSGI worker 4 (pid: 10486, cores: 2)
+[pid: 10484|app: 0|req: 1/1] 127.0.0.1 () {40 vars in 649 bytes} [Thu Apr 19 08:25:41 2018] GET /favicon.ico => generated 85 bytes in 212 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 10486|app: 0|req: 1/2] 192.168.21.134 () {40 vars in 667 bytes} [Thu Apr 19 09:01:49 2018] GET /favicon.ico => generated 85 bytes in 256 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+缓存为空
+[pid: 10483|app: 0|req: 1/3] 192.168.21.134 () {42 vars in 773 bytes} [Thu Apr 19 09:02:11 2018] GET /goods/index => generated 21355 bytes in 573 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 10483|app: 0|req: 2/4] 192.168.21.134 () {42 vars in 770 bytes} [Thu Apr 19 09:02:14 2018] GET /users/login => generated 2319 bytes in 10 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 10483|app: 0|req: 3/5] 192.168.21.134 () {44 vars in 845 bytes} [Thu Apr 19 09:02:50 2018] GET /goods/index => generated 21349 bytes in 82 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 10482|app: 0|req: 1/6] 192.168.21.134 () {42 vars in 819 bytes} [Thu Apr 19 09:59:11 2018] GET /users/logout => generated 0 bytes in 836 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 0)
+[pid: 10484|app: 0|req: 2/7] 192.168.21.134 () {42 vars in 776 bytes} [Thu Apr 19 09:59:14 2018] GET /users/register => generated 3240 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10486|app: 0|req: 2/8] 192.168.21.134 () {40 vars in 661 bytes} [Thu Apr 19 10:07:00 2018] GET /js/slideshow.js => generated 89 bytes in 368 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 10483|app: 0|req: 4/9] 192.168.21.134 () {42 vars in 776 bytes} [Thu Apr 19 10:07:07 2018] GET /users/register => generated 3240 bytes in 483 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10486|app: 0|req: 3/10] 192.168.21.134 () {50 vars in 957 bytes} [Thu Apr 19 11:13:02 2018] POST /users/register => generated 18 bytes in 706 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 10486|app: 0|req: 4/11] 192.168.21.134 () {42 vars in 776 bytes} [Thu Apr 19 11:49:55 2018] GET /users/register => generated 3240 bytes in 88 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10482|app: 0|req: 2/12] 192.168.21.134 () {44 vars in 807 bytes} [Thu Apr 19 11:49:58 2018] GET /users/register => generated 3240 bytes in 614 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 10483|app: 0|req: 5/13] 192.168.21.134 () {40 vars in 702 bytes} [Thu Apr 19 11:50:58 2018] GET /users/login => generated 2319 bytes in 47 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10484|app: 0|req: 3/14] 192.168.21.134 () {50 vars in 957 bytes} [Thu Apr 19 11:51:25 2018] POST /users/register => generated 18 bytes in 1267 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 10483|app: 0|req: 6/15] 192.168.21.134 () {50 vars in 957 bytes} [Thu Apr 19 12:10:23 2018] POST /users/register => generated 18 bytes in 1184 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 10483|app: 0|req: 7/16] 127.0.0.1 () {40 vars in 763 bytes} [Thu Apr 19 12:10:39 2018] GET /users/login => generated 2319 bytes in 72 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10482|app: 0|req: 3/17] 127.0.0.1 () {50 vars in 926 bytes} [Thu Apr 19 12:11:37 2018] POST /users/login => generated 0 bytes in 602 msecs (HTTP/1.1 302) 7 headers in 422 bytes (1 switches on core 0)
+[pid: 10483|app: 0|req: 8/18] 127.0.0.1 () {40 vars in 1019 bytes} [Thu Apr 19 12:26:46 2018] GET /users/active/eyJhbGciOiJIUzI1NiIsImV4cCI6MTUyNDE0MDUxNCwiaWF0IjoxNTI0MTM2OTE0fQ.eyJjb25maXJtIjoxM30.LH_sd6XMXyt7mtbcp2yWMfpyMjXty85SmlC8lLeyBeI => generated 21 bytes in 24 msecs (HTTP/1.1 200) 2 headers in 88 bytes (1 switches on core 0)
+[pid: 10482|app: 0|req: 4/19] 192.168.21.134 () {42 vars in 759 bytes} [Thu Apr 19 13:37:04 2018] GET /users/login => generated 2319 bytes in 121 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 10486|app: 0|req: 5/20] 192.168.21.134 () {42 vars in 768 bytes} [Thu Apr 19 13:37:11 2018] GET /users/info => generated 0 bytes in 382 msecs (HTTP/1.1 302) 4 headers in 167 bytes (1 switches on core 0)
+[pid: 10482|app: 0|req: 5/21] 192.168.21.134 () {50 vars in 996 bytes} [Thu Apr 19 13:56:54 2018] POST /users/login?next=/users/info => generated 0 bytes in 216 msecs (HTTP/1.1 302) 7 headers in 482 bytes (1 switches on core 0)
+缓存为空
+[pid: 10484|app: 0|req: 4/22] 192.168.21.134 () {42 vars in 813 bytes} [Mon Apr 23 10:05:51 2018] GET /goods/index => generated 21349 bytes in 1920 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 10484|app: 0|req: 5/23] 192.168.21.134 () {42 vars in 819 bytes} [Mon Apr 23 11:01:24 2018] GET /users/logout => generated 0 bytes in 197 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 0)
+[pid: 10486|app: 0|req: 6/24] 192.168.21.134 () {50 vars in 946 bytes} [Mon Apr 23 11:01:35 2018] POST /users/login => generated 0 bytes in 692 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 2 (pid: 10483)...
+Gracefully killing worker 4 (pid: 10486)...
+Gracefully killing worker 3 (pid: 10484)...
+Gracefully killing worker 1 (pid: 10482)...
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+worker 1 buried after 5 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Apr 23 11:05:08 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x20b7b20
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x20b7b20 pid: 10478 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 10478)
+spawned uWSGI worker 1 (pid: 41282, cores: 2)
+spawned uWSGI worker 2 (pid: 41283, cores: 2)
+spawned uWSGI worker 3 (pid: 41284, cores: 2)
+spawned uWSGI worker 4 (pid: 41288, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon Apr 23 19:22:02 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x1b1c2d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x1b1c2d0 pid: 11438 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11438)
+spawned uWSGI worker 1 (pid: 11445, cores: 2)
+spawned uWSGI worker 2 (pid: 11446, cores: 2)
+spawned uWSGI worker 3 (pid: 11447, cores: 2)
+spawned uWSGI worker 4 (pid: 11449, cores: 2)
+[pid: 11446|app: 0|req: 1/1] 192.168.21.134 () {42 vars in 739 bytes} [Mon Apr 23 11:22:17 2018] GET /users/register => generated 3240 bytes in 421 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 1/2] 192.168.21.134 () {44 vars in 720 bytes} [Mon Apr 23 11:22:18 2018] GET /favicon.ico => generated 85 bytes in 196 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 1/3] 192.168.21.134 () {42 vars in 765 bytes} [Mon Apr 23 11:22:24 2018] GET /users/register => generated 3240 bytes in 205 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 2/4] 192.168.21.134 () {42 vars in 765 bytes} [Mon Apr 23 11:26:53 2018] GET /users/register => generated 3240 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 3/5] 192.168.21.134 () {50 vars in 946 bytes} [Mon Apr 23 11:27:18 2018] POST /users/login => generated 2337 bytes in 55 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 1/6] 127.0.0.1 () {38 vars in 918 bytes} [Mon Apr 23 11:45:27 2018] GET /users/active/eyJpYXQiOjE1MjQ0ODI1NjUsImV4cCI6MTUyNDQ4NjE2NSwiYWxnIjoiSFMyNTYifQ.eyJjb25maXJtIjoxNn0.6_iuBHANtqRR876nhgYCmVvGP8Y5XAbC0vmCK0OlNpg => generated 0 bytes in 571 msecs (HTTP/1.1 302) 3 headers in 131 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 2/7] 127.0.0.1 () {40 vars in 649 bytes} [Mon Apr 23 11:45:28 2018] GET /favicon.ico => generated 85 bytes in 9 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+缓存为空
+[pid: 11446|app: 0|req: 2/8] 127.0.0.1 () {44 vars in 830 bytes} [Mon Apr 23 12:00:52 2018] GET /goods/index => generated 21349 bytes in 343 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存为空
+[pid: 11446|app: 0|req: 3/9] 192.168.21.134 () {42 vars in 770 bytes} [Sun Apr 29 05:00:51 2018] GET /goods/index => generated 21355 bytes in 1763 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 4/10] 192.168.21.134 () {40 vars in 711 bytes} [Sun Apr 29 12:30:43 2018] GET /admin/ => generated 0 bytes in 434 msecs (HTTP/1.1 302) 7 headers in 276 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 4/11] 192.168.21.134 () {50 vars in 989 bytes} [Sun Apr 29 12:30:53 2018] POST /admin/login/?next=/admin/ => generated 2077 bytes in 1419 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 2/12] 192.168.21.134 () {50 vars in 987 bytes} [Sun Apr 29 12:31:01 2018] POST /admin/login/?next=/admin/ => generated 0 bytes in 906 msecs (HTTP/1.1 302) 9 headers in 510 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 3/13] 192.168.21.134 () {42 vars in 833 bytes} [Sun Apr 29 12:31:43 2018] GET /admin/goods/goodssku/5/ => generated 11452 bytes in 759 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 5/14] 192.168.21.134 () {42 vars in 853 bytes} [Sun Apr 29 12:33:13 2018] GET /admin/goods/indexpromotionbanner/ => generated 4701 bytes in 456 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 3/15] 192.168.21.134 () {44 vars in 881 bytes} [Sun Apr 29 12:33:20 2018] GET /admin/ => generated 8493 bytes in 1074 msecs (HTTP/1.1 200) 6 headers in 214 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 4/16] 192.168.21.134 () {42 vars in 826 bytes} [Sun Apr 29 12:33:34 2018] GET /admin/auth/group/ => generated 3601 bytes in 46 msecs (HTTP/1.1 200) 7 headers in 336 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 5/17] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 13:04:02 2018] GET /users/login => generated 2319 bytes in 76 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 6/18] 192.168.21.134 () {50 vars in 990 bytes} [Sun Apr 29 13:04:35 2018] POST /users/login => generated 0 bytes in 317 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 6/19] 192.168.21.134 () {42 vars in 816 bytes} [Sun Apr 29 13:04:45 2018] GET /users/logout => generated 0 bytes in 125 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11445|app: 0|req: 7/20] 192.168.21.134 () {42 vars in 770 bytes} [Sun Apr 29 13:04:47 2018] GET /goods/index => generated 21355 bytes in 490 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11446|app: 0|req: 7/21] 192.168.21.134 () {42 vars in 744 bytes} [Sun Apr 29 13:05:17 2018] GET /goods/index => generated 21355 bytes in 284 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 5/22] 192.168.21.134 () {42 vars in 770 bytes} [Sun Apr 29 13:05:21 2018] GET /goods/index => generated 21355 bytes in 376 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 4/23] 192.168.21.134 () {50 vars in 946 bytes} [Sun Apr 29 13:31:47 2018] POST /users/login => generated 0 bytes in 344 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 5/24] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 13:32:03 2018] GET /users/login => generated 2319 bytes in 35 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 8/25] 192.168.21.134 () {40 vars in 705 bytes} [Sun Apr 29 13:34:06 2018] GET /js/slideshow.js => generated 89 bytes in 64 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 6/26] 192.168.21.134 () {50 vars in 990 bytes} [Sun Apr 29 13:39:19 2018] POST /users/login => generated 0 bytes in 65 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 8/27] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 14:06:48 2018] GET /goods/detail/1 => generated 12193 bytes in 311 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 9/28] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 14:14:00 2018] GET /goods/detail/1 => generated 12193 bytes in 30 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 10/29] 192.168.21.134 () {42 vars in 823 bytes} [Sun Apr 29 14:14:18 2018] GET /goods/detail/6 => generated 11283 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11447|app: 0|req: 7/30] 192.168.21.134 () {42 vars in 817 bytes} [Sun Apr 29 14:35:37 2018] GET /goods/index => generated 21349 bytes in 399 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11445|app: 0|req: 11/31] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 14:40:41 2018] GET /goods/index => generated 21349 bytes in 138 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 6/32] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 14:42:19 2018] GET /goods/detail/9 => generated 11050 bytes in 223 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 9/33] 192.168.21.134 () {42 vars in 844 bytes} [Sun Apr 29 14:43:36 2018] GET /goods/list/1/1?sort=price => generated 7260 bytes in 183 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 10/34] 192.168.21.134 () {42 vars in 857 bytes} [Sun Apr 29 14:43:39 2018] GET /goods/list/1/1?sort=default => generated 7272 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 12/35] 192.168.21.134 () {42 vars in 851 bytes} [Sun Apr 29 14:43:43 2018] GET /goods/list/1/1?sort=hot => generated 7247 bytes in 51 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11446|app: 0|req: 11/36] 192.168.21.134 () {42 vars in 830 bytes} [Sun Apr 29 14:43:54 2018] GET /goods/index => generated 21349 bytes in 95 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11445|app: 0|req: 13/37] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 14:44:11 2018] GET /goods/index => generated 21349 bytes in 111 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 12/38] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 14:44:15 2018] GET /goods/detail/1 => generated 12193 bytes in 37 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 7/39] 192.168.21.134 () {42 vars in 822 bytes} [Sun Apr 29 14:45:37 2018] GET /goods/detail/18 => generated 11046 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 8/40] 192.168.21.134 () {40 vars in 771 bytes} [Sun Apr 29 14:46:19 2018] GET /goods/list/2/5 => generated 7128 bytes in 141 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 9/41] 192.168.21.134 () {42 vars in 861 bytes} [Sun Apr 29 14:46:27 2018] GET /goods/list/2/3?sort=default => generated 7212 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 13/42] 192.168.21.134 () {42 vars in 861 bytes} [Sun Apr 29 14:46:30 2018] GET /goods/list/2/1?sort=default => generated 7128 bytes in 30 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 14/43] 192.168.21.134 () {42 vars in 861 bytes} [Sun Apr 29 14:46:33 2018] GET /goods/list/2/1?sort=default => generated 7128 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11445|app: 0|req: 14/44] 192.168.21.134 () {42 vars in 830 bytes} [Sun Apr 29 14:47:05 2018] GET /goods/index => generated 21349 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 15/45] 192.168.21.134 () {42 vars in 823 bytes} [Sun Apr 29 14:47:26 2018] GET /goods/detail/9 => generated 11050 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 10/46] 192.168.21.134 () {42 vars in 823 bytes} [Sun Apr 29 14:47:29 2018] GET /goods/detail/8 => generated 11505 bytes in 58 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 8/47] 192.168.21.134 () {44 vars in 861 bytes} [Sun Apr 29 14:51:38 2018] GET /goods/index => generated 21343 bytes in 179 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11445|app: 0|req: 16/48] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 14:51:47 2018] GET /goods/index => generated 21343 bytes in 219 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11446|app: 0|req: 15/49] 192.168.21.134 () {42 vars in 830 bytes} [Sun Apr 29 14:56:32 2018] GET /goods/index => generated 21349 bytes in 254 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 9/50] 192.168.21.134 () {42 vars in 814 bytes} [Sun Apr 29 15:02:52 2018] GET /goods/index => generated 21433 bytes in 328 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 17/51] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 15:03:11 2018] GET /goods/list/2/1 => generated 7128 bytes in 188 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 10/52] 192.168.21.134 () {42 vars in 820 bytes} [Sun Apr 29 15:03:35 2018] GET /goods/list/4/1 => generated 7136 bytes in 46 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+Building prefix dict from the default dictionary ...
+Dumping model to file cache /tmp/jieba.cache
+Loading model cost 1.314 seconds.
+Prefix dict has been built succesfully.
+[pid: 11446|app: 0|req: 16/53] 192.168.21.134 () {42 vars in 847 bytes} [Sun Apr 29 15:20:29 2018] GET /search/?q=%E8%8D%89%E8%8E%93 => generated 3881 bytes in 3001 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+Building prefix dict from the default dictionary ...
+Loading model from cache /tmp/jieba.cache
+Loading model cost 1.107 seconds.
+Prefix dict has been built succesfully.
+[pid: 11447|app: 0|req: 11/54] 192.168.21.134 () {42 vars in 837 bytes} [Sun Apr 29 15:21:12 2018] GET /search/?q=%E8%99%BE => generated 2977 bytes in 2207 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存为空
+[pid: 11445|app: 0|req: 18/55] 192.168.21.134 () {42 vars in 822 bytes} [Sun Apr 29 16:27:45 2018] GET /goods/index => generated 21433 bytes in 764 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 12/56] 192.168.21.134 () {42 vars in 819 bytes} [Mon Apr 30 07:06:15 2018] GET /users/logout => generated 0 bytes in 419 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 0)
+缓存为空
+[pid: 11447|app: 0|req: 13/57] 192.168.21.134 () {42 vars in 770 bytes} [Mon Apr 30 07:06:18 2018] GET /goods/index => generated 21439 bytes in 209 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 11/58] 192.168.21.134 () {42 vars in 776 bytes} [Mon Apr 30 07:06:23 2018] GET /goods/detail/1 => generated 12199 bytes in 439 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 17/59] 192.168.21.134 () {42 vars in 780 bytes} [Mon Apr 30 07:06:29 2018] GET /cart/ => generated 11707 bytes in 282 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 14/60] 192.168.21.134 () {42 vars in 795 bytes} [Mon Apr 30 07:44:08 2018] GET /goods/detail/1 => generated 12199 bytes in 197 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 12/61] 192.168.21.134 () {44 vars in 844 bytes} [Mon Apr 30 07:44:12 2018] GET /users/login?next=/cart => generated 2319 bytes in 67 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 13/62] 192.168.21.134 () {50 vars in 961 bytes} [Mon Apr 30 07:44:30 2018] POST /orders/place => generated 0 bytes in 62 msecs (HTTP/1.1 302) 4 headers in 161 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 14/63] 192.168.21.134 () {50 vars in 997 bytes} [Mon Apr 30 07:44:45 2018] POST /users/login?next=/cart => generated 0 bytes in 223 msecs (HTTP/1.1 302) 7 headers in 420 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 15/64] 192.168.21.134 () {44 vars in 844 bytes} [Mon Apr 30 07:44:45 2018] GET /cart/ => generated 11701 bytes in 96 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 19/65] 192.168.21.134 () {42 vars in 829 bytes} [Tue May  1 00:27:30 2018] GET /users/login?next=/cart => generated 2319 bytes in 415 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 15/66] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 00:27:40 2018] GET /goods/detail/7 => generated 11550 bytes in 224 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 20/67] 192.168.21.134 () {42 vars in 805 bytes} [Tue May  1 00:27:44 2018] GET /cart/ => generated 12697 bytes in 242 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 21/68] 192.168.21.134 () {48 vars in 964 bytes} [Tue May  1 00:27:55 2018] POST /cart/add/ => generated 91 bytes in 45 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 2
+[pid: 11445|app: 0|req: 22/69] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:02 2018] POST /cart/update => generated 58 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 2
+[pid: 11445|app: 0|req: 23/70] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:05 2018] POST /cart/update => generated 58 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 2
+[pid: 11447|app: 0|req: 16/71] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:08 2018] POST /cart/update => generated 58 bytes in 24 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 2
+[pid: 11446|app: 0|req: 18/72] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:11 2018] POST /cart/update => generated 58 bytes in 274 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 2
+[pid: 11449|app: 0|req: 16/73] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:15 2018] POST /cart/update => generated 58 bytes in 238 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 3
+[pid: 11449|app: 0|req: 17/74] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:16 2018] POST /cart/update => generated 58 bytes in 27 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 5
+[pid: 11447|app: 0|req: 17/75] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:16 2018] POST /cart/update => generated 58 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 7
+[pid: 11447|app: 0|req: 18/76] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:16 2018] POST /cart/update => generated 58 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 9
+[pid: 11446|app: 0|req: 19/77] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:17 2018] POST /cart/update => generated 58 bytes in 63 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 11
+[pid: 11447|app: 0|req: 19/78] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:17 2018] POST /cart/update => generated 58 bytes in 15 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 12
+[pid: 11446|app: 0|req: 20/79] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:22 2018] POST /cart/update => generated 46 bytes in 30 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+count== 9
+[pid: 11445|app: 0|req: 24/80] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:25 2018] POST /cart/update => generated 58 bytes in 29 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 7
+[pid: 11445|app: 0|req: 25/81] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:25 2018] POST /cart/update => generated 58 bytes in 28 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 5
+[pid: 11449|app: 0|req: 18/82] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:25 2018] POST /cart/update => generated 58 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 3
+[pid: 11447|app: 0|req: 20/83] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:26 2018] POST /cart/update => generated 58 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 1
+[pid: 11445|app: 0|req: 26/84] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:26 2018] POST /cart/update => generated 58 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 1
+[pid: 11447|app: 0|req: 21/85] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:28 2018] POST /cart/update => generated 58 bytes in 21 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 1
+[pid: 11447|app: 0|req: 22/86] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:29 2018] POST /cart/update => generated 58 bytes in 9 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 2
+[pid: 11447|app: 0|req: 23/87] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:30 2018] POST /cart/update => generated 58 bytes in 12 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 4
+[pid: 11445|app: 0|req: 27/88] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:31 2018] POST /cart/update => generated 58 bytes in 17 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 4
+[pid: 11449|app: 0|req: 19/89] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:32 2018] POST /cart/update => generated 58 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 2
+[pid: 11447|app: 0|req: 24/90] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:33 2018] POST /cart/update => generated 58 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 1
+[pid: 11449|app: 0|req: 20/91] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:33 2018] POST /cart/update => generated 58 bytes in 10 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 1
+[pid: 11445|app: 0|req: 28/92] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:56 2018] POST /cart/update => generated 58 bytes in 20 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 1)
+count== 1
+[pid: 11449|app: 0|req: 21/93] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 00:28:59 2018] POST /cart/update => generated 58 bytes in 14 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 22/94] 192.168.21.134 () {42 vars in 808 bytes} [Tue May  1 00:29:04 2018] GET /goods/index => generated 21433 bytes in 172 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 23/95] 192.168.21.134 () {42 vars in 770 bytes} [Tue May  1 00:46:40 2018] GET /users/login => generated 2319 bytes in 16 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 29/96] 192.168.21.134 () {42 vars in 758 bytes} [Tue May  1 00:46:46 2018] GET /cart/ => generated 10713 bytes in 33 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 30/97] 192.168.21.134 () {44 vars in 816 bytes} [Tue May  1 00:46:51 2018] GET /users/login?next=/cart => generated 2319 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 25/98] 192.168.21.134 () {42 vars in 776 bytes} [Tue May  1 00:47:40 2018] GET /goods/detail/1 => generated 12199 bytes in 134 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 26/99] 192.168.21.134 () {42 vars in 780 bytes} [Tue May  1 00:47:43 2018] GET /cart/ => generated 11707 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 21/100] 192.168.21.134 () {44 vars in 835 bytes} [Tue May  1 00:47:47 2018] GET /users/login?next=/cart => generated 2319 bytes in 60 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+count== 2
+[pid: 11449|app: 0|req: 24/101] 192.168.21.134 () {48 vars in 934 bytes} [Tue May  1 01:07:17 2018] POST /cart/update => generated 58 bytes in 55 msecs (HTTP/1.1 200) 4 headers in 134 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 25/102] 192.168.21.134 () {42 vars in 783 bytes} [Tue May  1 01:07:32 2018] GET /goods/index => generated 21439 bytes in 147 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 22/103] 192.168.21.134 () {50 vars in 970 bytes} [Tue May  1 01:07:36 2018] POST /orders/place => generated 0 bytes in 101 msecs (HTTP/1.1 302) 5 headers in 201 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 26/104] 192.168.21.134 () {50 vars in 997 bytes} [Tue May  1 01:07:56 2018] POST /users/login?next=/cart => generated 0 bytes in 74 msecs (HTTP/1.1 302) 7 headers in 420 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 27/105] 192.168.21.134 () {44 vars in 844 bytes} [Tue May  1 01:07:56 2018] GET /cart/ => generated 12699 bytes in 21 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 28/106] 192.168.21.134 () {42 vars in 802 bytes} [Tue May  1 01:08:21 2018] GET /cart/ => generated 12699 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 29/107] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:08:33 2018] GET /goods/detail/1 => generated 12193 bytes in 34 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 30/108] 192.168.21.134 () {42 vars in 803 bytes} [Tue May  1 01:08:46 2018] GET /cart/ => generated 12699 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11446|app: 0|req: 23/109] 192.168.21.134 () {42 vars in 808 bytes} [Tue May  1 01:09:39 2018] GET /goods/index => generated 21433 bytes in 402 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 31/110] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:09:45 2018] GET /goods/detail/1 => generated 12193 bytes in 20 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 27/111] 192.168.21.134 () {42 vars in 813 bytes} [Tue May  1 01:10:03 2018] GET /users/info => generated 6598 bytes in 135 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 32/112] 192.168.21.134 () {42 vars in 810 bytes} [Tue May  1 01:10:40 2018] GET /users/logout => generated 0 bytes in 12 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 28/113] 192.168.21.134 () {48 vars in 889 bytes} [Tue May  1 01:11:07 2018] POST /users/login => generated 1374 bytes in 51 msecs (HTTP/1.1 403) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 24/114] 192.168.21.134 () {50 vars in 946 bytes} [Tue May  1 01:11:28 2018] POST /users/login => generated 0 bytes in 125 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 25/115] 192.168.21.134 () {42 vars in 802 bytes} [Tue May  1 01:11:32 2018] GET /cart/ => generated 12699 bytes in 32 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 31/116] 192.168.21.134 () {42 vars in 764 bytes} [Tue May  1 01:12:32 2018] GET /users/login => generated 2319 bytes in 189 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 32/117] 192.168.21.134 () {42 vars in 776 bytes} [Tue May  1 01:12:37 2018] GET /goods/detail/3 => generated 11519 bytes in 205 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 33/118] 192.168.21.134 () {48 vars in 939 bytes} [Tue May  1 01:12:43 2018] POST /cart/add/ => generated 91 bytes in 27 msecs (HTTP/1.1 200) 4 headers in 134 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 33/119] 192.168.21.134 () {42 vars in 795 bytes} [Tue May  1 01:12:48 2018] GET /goods/detail/3 => generated 11519 bytes in 70 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 26/120] 192.168.21.134 () {44 vars in 844 bytes} [Tue May  1 01:12:51 2018] GET /users/login?next=/cart => generated 2319 bytes in 3 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 27/121] 192.168.21.134 () {42 vars in 777 bytes} [Tue May  1 01:13:01 2018] GET /cart/ => generated 11701 bytes in 17 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 34/122] 192.168.21.134 () {42 vars in 800 bytes} [Tue May  1 01:13:19 2018] GET /goods/index => generated 21439 bytes in 141 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 28/123] 192.168.21.134 () {50 vars in 970 bytes} [Tue May  1 01:13:22 2018] POST /orders/place => generated 0 bytes in 1 msecs (HTTP/1.1 302) 5 headers in 201 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 29/124] 192.168.21.134 () {50 vars in 997 bytes} [Tue May  1 01:13:29 2018] POST /users/login?next=/cart => generated 0 bytes in 52 msecs (HTTP/1.1 302) 7 headers in 420 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 30/125] 192.168.21.134 () {44 vars in 844 bytes} [Tue May  1 01:13:29 2018] GET /cart/ => generated 13683 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 34/126] 192.168.21.134 () {42 vars in 796 bytes} [Tue May  1 01:13:42 2018] GET /cart/ => generated 12699 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11445|app: 0|req: 35/127] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:13:50 2018] GET /goods/detail/3 => generated 11513 bytes in 105 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 29/128] 192.168.21.134 () {42 vars in 773 bytes} [Tue May  1 01:13:55 2018] GET /users/login => generated 2319 bytes in 13 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 35/129] 192.168.21.134 () {42 vars in 776 bytes} [Tue May  1 01:13:59 2018] GET /goods/detail/3 => generated 11519 bytes in 24 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 30/130] 192.168.21.134 () {42 vars in 780 bytes} [Tue May  1 01:14:05 2018] GET /cart/ => generated 11701 bytes in 64 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 36/131] 192.168.21.134 () {44 vars in 835 bytes} [Tue May  1 01:14:08 2018] GET /users/login?next=/cart => generated 2319 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 37/132] 192.168.21.134 () {44 vars in 842 bytes} [Tue May  1 01:14:14 2018] GET /cart => generated 0 bytes in 1 msecs (HTTP/1.1 301) 3 headers in 142 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 38/133] 192.168.21.134 () {42 vars in 808 bytes} [Tue May  1 01:15:55 2018] GET /goods/index => generated 21433 bytes in 95 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 39/134] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:15:56 2018] GET /goods/detail/3 => generated 11513 bytes in 23 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 40/135] 192.168.21.134 () {42 vars in 809 bytes} [Tue May  1 01:16:11 2018] GET /orders/1 => generated 5483 bytes in 52 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+count== 2
+[pid: 11449|app: 0|req: 41/136] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 01:16:19 2018] POST /cart/update => generated 58 bytes in 16 msecs (HTTP/1.1 200) 3 headers in 94 bytes (1 switches on core 0)
+count== 4
+[pid: 11449|app: 0|req: 42/137] 192.168.21.134 () {48 vars in 959 bytes} [Tue May  1 01:16:20 2018] POST /cart/update => generated 46 bytes in 19 msecs (HTTP/1.1 200) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 43/138] 192.168.21.134 () {42 vars in 796 bytes} [Tue May  1 01:16:23 2018] GET /cart/ => generated 12699 bytes in 15 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 44/139] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:16:28 2018] GET /goods/detail/6 => generated 11283 bytes in 46 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 45/140] 192.168.21.134 () {42 vars in 805 bytes} [Tue May  1 01:16:39 2018] GET /cart/ => generated 13689 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 46/141] 192.168.21.134 () {42 vars in 820 bytes} [Tue May  1 01:16:48 2018] GET /goods/detail/6 => generated 11284 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 47/142] 192.168.21.134 () {42 vars in 803 bytes} [Tue May  1 01:17:03 2018] GET /cart/ => generated 13686 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11449|app: 0|req: 48/143] 192.168.21.134 () {42 vars in 764 bytes} [Tue May  1 01:40:22 2018] GET /users/login => generated 2319 bytes in 168 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 31/144] 192.168.21.134 () {42 vars in 758 bytes} [Tue May  1 01:40:29 2018] GET /cart/ => generated 10713 bytes in 236 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11449|app: 0|req: 49/145] 192.168.21.134 () {42 vars in 778 bytes} [Tue May  1 01:40:35 2018] GET /goods/detail/18 => generated 11052 bytes in 216 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 36/146] 192.168.21.134 () {44 vars in 846 bytes} [Tue May  1 01:40:42 2018] GET /users/login?next=/cart => generated 2319 bytes in 161 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11447|app: 0|req: 31/147] 192.168.21.134 () {44 vars in 842 bytes} [Tue May  1 01:40:54 2018] GET /cart => generated 0 bytes in 105 msecs (HTTP/1.1 301) 3 headers in 142 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 32/148] 192.168.21.134 () {42 vars in 810 bytes} [Tue May  1 01:41:12 2018] GET /users/logout => generated 0 bytes in 116 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11447|app: 0|req: 33/149] 192.168.21.134 () {42 vars in 770 bytes} [Tue May  1 01:41:17 2018] GET /goods/index => generated 21439 bytes in 177 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 32/150] 192.168.21.134 () {50 vars in 952 bytes} [Tue May  1 01:41:23 2018] POST /orders/place => generated 0 bytes in 27 msecs (HTTP/1.1 302) 5 headers in 202 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 37/151] 192.168.21.134 () {50 vars in 998 bytes} [Tue May  1 01:41:29 2018] POST /users/login?next=/cart => generated 0 bytes in 371 msecs (HTTP/1.1 302) 7 headers in 420 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 34/152] 192.168.21.134 () {44 vars in 844 bytes} [Tue May  1 01:41:29 2018] GET /cart/ => generated 14671 bytes in 31 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11446|app: 0|req: 33/153] 192.168.21.134 () {42 vars in 825 bytes} [Tue May  1 01:42:50 2018] GET /goods/index => generated 21433 bytes in 255 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+sku_ids ['18']
+[pid: 11445|app: 0|req: 38/154] 192.168.21.134 () {50 vars in 996 bytes} [Tue May  1 01:42:55 2018] POST /orders/place => generated 6679 bytes in 74 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存为空
+[pid: 11449|app: 0|req: 50/155] 192.168.21.134 () {40 vars in 707 bytes} [Tue May  1 06:18:39 2018] GET /goods/index => generated 21439 bytes in 732 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11449|app: 0|req: 51/156] 192.168.21.134 () {42 vars in 764 bytes} [Tue May  1 06:18:43 2018] GET /goods/index => generated 21439 bytes in 164 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 39/157] 192.168.21.134 () {50 vars in 951 bytes} [Tue May  1 06:18:49 2018] POST /orders/place => generated 0 bytes in 163 msecs (HTTP/1.1 302) 5 headers in 201 bytes (1 switches on core 0)
+[pid: 11445|app: 0|req: 40/158] 192.168.21.134 () {50 vars in 997 bytes} [Tue May  1 06:19:04 2018] POST /users/login?next=/cart => generated 0 bytes in 217 msecs (HTTP/1.1 302) 7 headers in 420 bytes (1 switches on core 1)
+[pid: 11447|app: 0|req: 35/159] 192.168.21.134 () {44 vars in 844 bytes} [Tue May  1 06:19:05 2018] GET /cart/ => generated 14670 bytes in 354 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 34/160] 192.168.21.134 () {42 vars in 764 bytes} [Tue May  1 06:19:11 2018] GET /users/login => generated 2319 bytes in 167 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 11446|app: 0|req: 35/161] 192.168.21.134 () {42 vars in 776 bytes} [Tue May  1 06:19:15 2018] GET /goods/detail/3 => generated 11519 bytes in 298 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 11446|app: 0|req: 36/162] 192.168.21.134 () {42 vars in 780 bytes} [Tue May  1 06:19:19 2018] GET /cart/ => generated 11701 bytes in 28 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Sun May  6 19:08:50 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x21602d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x21602d0 pid: 12484 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12484)
+spawned uWSGI worker 1 (pid: 12496, cores: 2)
+spawned uWSGI worker 2 (pid: 12497, cores: 2)
+spawned uWSGI worker 3 (pid: 12498, cores: 2)
+spawned uWSGI worker 4 (pid: 12499, cores: 2)
+[pid: 12496|app: 0|req: 1/1] 192.168.21.134 () {40 vars in 672 bytes} [Sun May  6 11:09:19 2018] GET /favicon.ico => generated 85 bytes in 201 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 12496|app: 0|req: 2/2] 192.168.21.134 () {42 vars in 776 bytes} [Sun May  6 13:06:51 2018] GET /users/info => generated 0 bytes in 19 msecs (HTTP/1.1 302) 4 headers in 167 bytes (1 switches on core 1)
+[pid: 12498|app: 0|req: 1/3] 192.168.21.134 () {42 vars in 776 bytes} [Sun May  6 13:06:51 2018] GET /users/info => generated 0 bytes in 252 msecs (HTTP/1.1 302) 4 headers in 167 bytes (1 switches on core 0)
+[pid: 12496|app: 0|req: 3/4] 192.168.21.134 () {42 vars in 778 bytes} [Sun May  6 13:07:08 2018] GET /users/login => generated 2319 bytes in 5 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存为空
+[pid: 12499|app: 0|req: 1/5] 192.168.21.134 () {44 vars in 845 bytes} [Sun May  6 13:07:22 2018] GET /goods/index => generated 21433 bytes in 530 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12497|app: 0|req: 1/6] 192.168.21.134 () {42 vars in 770 bytes} [Sun May  6 13:07:31 2018] GET /users/login => generated 2319 bytes in 225 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12496|app: 0|req: 4/7] 192.168.21.134 () {42 vars in 758 bytes} [Sun May  6 13:07:36 2018] GET /cart/ => generated 10713 bytes in 18 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12498|app: 0|req: 2/8] 192.168.21.134 () {42 vars in 799 bytes} [Sun May  6 13:07:40 2018] GET /users/login?next=/orders/1 => generated 2319 bytes in 7 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12497|app: 0|req: 2/9] 192.168.21.134 () {42 vars in 799 bytes} [Sun May  6 13:07:49 2018] GET /users/login?next=/orders/1 => generated 2319 bytes in 2 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12498|app: 0|req: 3/10] 192.168.21.134 () {44 vars in 854 bytes} [Sun May  6 13:07:59 2018] GET /orders/1 => generated 5483 bytes in 40 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12497|app: 0|req: 3/11] 192.168.21.134 () {42 vars in 809 bytes} [Sun May  6 13:08:06 2018] GET /users/info => generated 6594 bytes in 85 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12498|app: 0|req: 4/12] 192.168.21.134 () {42 vars in 815 bytes} [Sun May  6 13:08:10 2018] GET /users/address => generated 3793 bytes in 22 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12499|app: 0|req: 2/13] 192.168.21.134 () {42 vars in 807 bytes} [Sun May  6 13:08:13 2018] GET /orders/1 => generated 5483 bytes in 25 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12496|app: 0|req: 5/14] 192.168.21.134 () {42 vars in 814 bytes} [Sun May  6 13:08:15 2018] GET /users/info => generated 6594 bytes in 81 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12496|app: 0|req: 6/15] 192.168.21.134 () {42 vars in 825 bytes} [Sun May  6 13:08:23 2018] GET /users/detail.html => generated 91 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 12496|app: 0|req: 7/16] 192.168.21.134 () {42 vars in 825 bytes} [Sun May  6 13:08:30 2018] GET /users/detail.html => generated 91 bytes in 1 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 12496|app: 0|req: 8/17] 192.168.21.134 () {42 vars in 814 bytes} [Sun May  6 13:08:37 2018] GET /users/info => generated 6594 bytes in 26 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 12496|app: 0|req: 9/18] 192.168.21.134 () {42 vars in 820 bytes} [Sun May  6 13:08:43 2018] GET /goods/detail/1 => generated 12193 bytes in 66 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12499|app: 0|req: 3/19] 192.168.21.134 () {42 vars in 805 bytes} [Sun May  6 13:08:52 2018] GET /cart/ => generated 15654 bytes in 26 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12499|app: 0|req: 4/20] 192.168.21.134 () {42 vars in 807 bytes} [Sun May  6 14:05:27 2018] GET /orders/1 => generated 5483 bytes in 309 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12499|app: 0|req: 5/21] 192.168.21.134 () {42 vars in 814 bytes} [Sun May  6 14:05:31 2018] GET /users/info => generated 6594 bytes in 51 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12499|app: 0|req: 6/22] 192.168.21.134 () {42 vars in 826 bytes} [Tue May  8 01:42:30 2018] GET /users/index.html => generated 90 bytes in 381 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+[pid: 12496|app: 0|req: 10/23] 192.168.21.134 () {42 vars in 803 bytes} [Tue May  8 01:43:04 2018] GET /users/login => generated 2319 bytes in 552 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+缓存为空
+[pid: 12498|app: 0|req: 5/24] 192.168.21.134 () {44 vars in 845 bytes} [Tue May  8 01:44:39 2018] GET /goods/index => generated 21433 bytes in 1579 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 12497|app: 0|req: 4/25] 192.168.21.134 () {42 vars in 802 bytes} [Tue May  8 01:47:15 2018] GET /orders/1 => generated 5483 bytes in 823 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12499|app: 0|req: 7/26] 192.168.21.134 () {42 vars in 811 bytes} [Tue May  8 01:47:23 2018] GET /users/info => generated 6594 bytes in 257 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12498|app: 0|req: 6/27] 192.168.21.134 () {42 vars in 805 bytes} [Wed May  9 05:51:04 2018] GET /orders/1 => generated 5483 bytes in 469 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12499|app: 0|req: 8/28] 192.168.21.134 () {42 vars in 811 bytes} [Wed May  9 05:51:06 2018] GET /users/info => generated 6594 bytes in 351 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 0)
+[pid: 12497|app: 0|req: 5/29] 192.168.21.134 () {42 vars in 815 bytes} [Wed May  9 05:51:12 2018] GET /users/address => generated 3793 bytes in 302 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 1)
+[pid: 12499|app: 0|req: 9/30] 192.168.21.134 () {42 vars in 809 bytes} [Wed May  9 05:51:16 2018] GET /users/info => generated 6594 bytes in 38 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+缓存为空
+[pid: 12498|app: 0|req: 7/31] 192.168.21.134 () {42 vars in 813 bytes} [Wed May  9 12:36:33 2018] GET /goods/index => generated 21433 bytes in 481 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+...brutally killing workers...
+Gracefully killing worker 4 (pid: 12499)...
+Gracefully killing worker 3 (pid: 12498)...
+Gracefully killing worker 1 (pid: 12496)...
+Gracefully killing worker 2 (pid: 12497)...
+worker 1 buried after 7 seconds
+worker 2 buried after 7 seconds
+worker 3 buried after 7 seconds
+worker 4 buried after 7 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Fri May 11 03:40:51 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0xae1b80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xae1b80 pid: 12484 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 12484)
+spawned uWSGI worker 1 (pid: 41222, cores: 2)
+spawned uWSGI worker 2 (pid: 41223, cores: 2)
+spawned uWSGI worker 3 (pid: 41225, cores: 2)
+spawned uWSGI worker 4 (pid: 41230, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Fri May 11 14:43:49 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x13452d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x13452d0 pid: 11201 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11201)
+spawned uWSGI worker 1 (pid: 11208, cores: 2)
+spawned uWSGI worker 2 (pid: 11209, cores: 2)
+spawned uWSGI worker 3 (pid: 11210, cores: 2)
+spawned uWSGI worker 4 (pid: 11211, cores: 2)
+[pid: 11210|app: 0|req: 1/1] 192.168.21.134 () {40 vars in 697 bytes} [Fri May 11 06:43:53 2018] GET /favicon.ico => generated 85 bytes in 412 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 11211|app: 0|req: 1/2] 192.168.21.134 () {40 vars in 705 bytes} [Fri May 11 06:43:55 2018] GET /js/slideshow.js => generated 89 bytes in 212 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+[pid: 11210|app: 0|req: 2/3] 192.168.21.134 () {40 vars in 705 bytes} [Fri May 11 07:19:21 2018] GET /js/slideshow.js => generated 89 bytes in 21 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 1)
+缓存不为空,直接使用了缓存中的数据
+[pid: 11211|app: 0|req: 2/4] 192.168.21.134 () {42 vars in 796 bytes} [Fri May 11 07:19:35 2018] GET /goods/index => generated 21433 bytes in 163 msecs (HTTP/1.1 200) 3 headers in 102 bytes (1 switches on core 1)
+[pid: 11211|app: 0|req: 3/5] 192.168.21.134 () {42 vars in 770 bytes} [Fri May 11 07:19:41 2018] GET /users/login => generated 2319 bytes in 4 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+...brutally killing workers...
+Gracefully killing worker 3 (pid: 11210)...
+Gracefully killing worker 2 (pid: 11209)...
+Gracefully killing worker 1 (pid: 11208)...
+Gracefully killing worker 4 (pid: 11211)...
+worker 1 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 3 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+closing all non-uwsgi socket fds > 2 (max_fd = 1048576)...
+found fd 3 mapped to socket 0 (192.168.21.134:8090)
+running /home/python/.virtualenvs/py3_django/bin/uwsgi
+[uWSGI] getting INI configuration from uwsgi2.ini
+*** Starting uWSGI 2.0.15 (64bit) on [Fri May 11 08:48:38 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x2578b80
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x2578b80 pid: 11201 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+gracefully (RE)spawned uWSGI master process (pid: 11201)
+spawned uWSGI worker 1 (pid: 12073, cores: 2)
+spawned uWSGI worker 2 (pid: 12075, cores: 2)
+spawned uWSGI worker 3 (pid: 12077, cores: 2)
+spawned uWSGI worker 4 (pid: 12081, cores: 2)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon May 14 16:48:20 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x20022d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x20022d0 pid: 11657 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11657)
+spawned uWSGI worker 1 (pid: 11669, cores: 2)
+spawned uWSGI worker 2 (pid: 11670, cores: 2)
+spawned uWSGI worker 3 (pid: 11671, cores: 2)
+spawned uWSGI worker 4 (pid: 11673, cores: 2)
+[pid: 11669|app: 0|req: 1/1] 192.168.21.134 () {40 vars in 653 bytes} [Mon May 14 08:48:29 2018] GET /favicon.ico => generated 85 bytes in 183 msecs (HTTP/1.1 404) 2 headers in 80 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon May 14 17:04:59 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x7bf2d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x7bf2d0 pid: 11904 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 11904)
+spawned uWSGI worker 1 (pid: 11908, cores: 2)
+spawned uWSGI worker 2 (pid: 11909, cores: 2)
+spawned uWSGI worker 3 (pid: 11910, cores: 2)
+spawned uWSGI worker 4 (pid: 11912, cores: 2)
+[pid: 11910|app: 0|req: 1/1] 192.168.21.134 () {50 vars in 946 bytes} [Mon May 14 09:05:28 2018] POST /users/login => generated 27 bytes in 267 msecs (HTTP/1.1 500) 2 headers in 92 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon May 14 17:05:52 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0xe2a2d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0xe2a2d0 pid: 12030 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 12030)
+spawned uWSGI worker 1 (pid: 12037, cores: 2)
+spawned uWSGI worker 2 (pid: 12038, cores: 2)
+spawned uWSGI worker 3 (pid: 12039, cores: 2)
+spawned uWSGI worker 4 (pid: 12041, cores: 2)
+[pid: 12038|app: 0|req: 1/1] 192.168.21.134 () {42 vars in 758 bytes} [Mon May 14 09:06:01 2018] GET /cart/ => generated 10713 bytes in 268 msecs (HTTP/1.1 200) 4 headers in 224 bytes (1 switches on core 0)
+[pid: 12038|app: 0|req: 2/2] 192.168.21.134 () {50 vars in 946 bytes} [Mon May 14 09:06:08 2018] POST /users/login => generated 0 bytes in 81 msecs (HTTP/1.1 302) 7 headers in 427 bytes (1 switches on core 1)
+*** Starting uWSGI 2.0.15 (64bit) on [Mon May 14 18:25:49 2018] ***
+compiled with version: 5.4.0 20160609 on 19 September 2017 11:22:48
+os: Linux-4.4.0-31-generic #50-Ubuntu SMP Wed Jul 13 00:07:12 UTC 2016
+nodename: ubuntu
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 4
+current working directory: /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+writing pidfile to uwsgi2.pid
+detected binary path: /home/python/.virtualenvs/py3_django/bin/uwsgi
+chdir() to /home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+your processes number limit is 7775
+your memory page size is 4096 bytes
+detected max file descriptor number: 1048576
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 192.168.21.134:8090 fd 3
+Python version: 3.5.2 (default, Nov 23 2017, 16:37:01)  [GCC 5.4.0 20160609]
+Set PythonHome to /home/python/.virtualenvs/py3_django
+Python main interpreter initialized at 0x19ed2d0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 415360 bytes (405 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh
+/home/python/Desktop/django_njl/day_08/dailyfresh/dailyfresh/apps
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x19ed2d0 pid: 13838 (default app)
+*** uWSGI is running in multiple interpreter mode ***
+spawned uWSGI master process (pid: 13838)
+spawned uWSGI worker 1 (pid: 13851, cores: 2)
+spawned uWSGI worker 2 (pid: 13852, cores: 2)
+spawned uWSGI worker 3 (pid: 13853, cores: 2)
+spawned uWSGI worker 4 (pid: 13855, cores: 2)
+[pid: 13851|app: 0|req: 1/1] 192.168.21.134 () {42 vars in 815 bytes} [Mon May 14 10:26:19 2018] GET /users/logout => generated 0 bytes in 215 msecs (HTTP/1.1 302) 4 headers in 221 bytes (1 switches on core 0)

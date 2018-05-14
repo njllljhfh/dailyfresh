@@ -36,8 +36,9 @@ def send_mail_method(recipient_list, user_name, token):
     # 参4:邮件接收方(recipient_list,可以是多个人接收)
     # html_message, 可传能被浏览器渲染的标签的文本信息
     html_body = '<h1>尊敬的用户 %s, 感谢您注册天天生鲜！</h1>' \
-                '<br/><p>请点击此链接激活您的帐号<a href="http://127.0.0.1:8000/users/active/%s">' \
-                'http://127.0.0.1:8000/users/active/%s</a></p>' % (user_name, token, token)
+                '<br/><p>请点击此链接激活您的帐号<a href="http://127.0.0.1:80/users/active/%s">' \
+                'http://127.0.0.1:80/users/active/%s</a></p>' % (user_name, token, token)
+    # 注意： 下面激活码的地址中的端口号，要改成nginx中配置的服务器的端口后，否自激活邮件中的激活链接无法打开（未上线时，端口号是8000）。
     send_mail('天天生鲜激活', '', settings.EMAIL_FROM, recipient_list, html_message=html_body)
 
 

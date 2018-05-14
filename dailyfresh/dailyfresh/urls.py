@@ -17,6 +17,8 @@ import haystack
 from django.conf.urls import include, url
 from django.contrib import admin
 
+# URL正则匹配中，增加了命名空间，方便后续的反解析
+# URL正则匹配中，register后面是否加/，根据公司需求而定
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^users/', include('users.urls', namespace='users')),

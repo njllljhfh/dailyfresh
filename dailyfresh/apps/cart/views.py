@@ -94,7 +94,7 @@ class AddCartView(View):
                 # 如果不存在, 最后保存的数量 = 当前的数量
                 cart_dict = {}
 
-            # 判断当前商品的id是否存在与 cookies 中
+            # 判断当前商品的id是否存在于 cookies 中
             if sku_id in cart_dict:
                 # 如果存在,获取当前商品在之前的cookies中的购物车数量
                 origin_count = cart_dict.get(sku_id)
@@ -188,7 +188,7 @@ class CartInfoView(View):
             except GoodsSKU.DoesNotExist:
                 # 如果当前遍历的这个 skuid 没有,忽略他,继续取下一个j
                 continue
-            # 以为redis中存的是字符串
+            # 因为redis中存的是字符串
             count = int(count)  # 单个商品的数量
             amount = sku.price * count  # 单个商品的总价
             sku.count = count  # 把当前商品的数量,保存在当前商品对象的一个属性中
